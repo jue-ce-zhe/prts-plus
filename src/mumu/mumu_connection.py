@@ -28,8 +28,8 @@ if win32gui.IsIconic(PARENT_HANDLE):
 
 # Attempt to set the program to be DPI aware to get correct window dimensions
 try:
-    # Set the process to be system DPI aware (1: System DPI Aware)
-    ctypes.windll.shcore.SetProcessDpiAwareness(1)
+    # Set the process to be system DPI aware (2: Per-monitor DPI aware)
+    ctypes.windll.shcore.SetProcessDpiAwareness(2)
 except Exception as e:
     # Ignore the error if the function call is not supported
-    print(f"Error setting DPI awareness: {e}")
+    logger.warning(f"Failed to set the program to be DPI aware: {e}")
