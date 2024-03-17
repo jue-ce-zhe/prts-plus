@@ -39,7 +39,6 @@ def capture_game_window(ratio: Optional[Tuple[float, float, float, float]] = Non
 
     # Calculate the area to capture
     left, top, right, bottom = win32gui.GetWindowRect(HANDLE)
-    logger.debug(f"Window dimensions: {left}, {top}, {right}, {bottom}")
     window_width = right - left
     window_height = bottom - top
     rect = (int(window_width * ratio[0]), int(window_height * ratio[1]), 
@@ -62,8 +61,6 @@ def capture_game_window(ratio: Optional[Tuple[float, float, float, float]] = Non
 
         # Capture the specified area
         saveDC.BitBlt((0, 0), (capture_width, capture_height), mfcDC, (capture_left, capture_top), win32con.SRCCOPY)
-        logger.debug(f"mfcdc: {mfcDC.GetDeviceCaps(win32con.HORZRES)}, {mfcDC.GetDeviceCaps(win32con.VERTRES)}")
-        logger.debug(f"Captured area dimensions: {capture_left}, {capture_top}, {capture_right}, {capture_bottom}")
 
         # Convert the bitmap to a NumPy array
         bmpinfo = saveBitMap.GetInfo()
