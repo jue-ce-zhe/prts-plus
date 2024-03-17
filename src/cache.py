@@ -8,7 +8,7 @@ from typing import List, Dict, Any, Callable
 from src.logger import logger
 from src.config import ImageProcessingConfig as imgconfig
 
-__all__ = ["load_avatars", "get_avatars", "replace_avatar", "load_map", "get_map"]
+__all__ = ["load_avatars", "get_avatars", "replace_avatar", "load_map_by_code", "get_map_by_code", "load_map_by_name", "get_map_by_name"]
 
 RESOURCE_PATH = os.path.join(os.path.dirname(__file__), "..", "resource")
 

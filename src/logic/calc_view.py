@@ -5,7 +5,7 @@ from typing import List, Tuple, Dict, Any
 from src.logger import logger
 from src.config import ViewCalculationConfig as viewconfig
 
-def transform_map_to_view(level: Dict[str, Any]) -> List[List[Tuple[float, float]]]:
+def transform_map_to_view(level: Dict[str, Any], side: bool) -> List[List[Tuple[float, float]]]:
     """
     Transforms a map to a view based on the given parameters.
 
@@ -18,7 +18,7 @@ def transform_map_to_view(level: Dict[str, Any]) -> List[List[Tuple[float, float
     DEGREE = math.pi / 180
     try:
         height, width = level["height"], level["width"]
-        x, y, z = level["view"][1]
+        x, y, z = level["view"][1 if side else 0]
     except KeyError as e:
         logger.error(f"Error loading map data: {e}")
         raise KeyError(f"Error loading map data: {e}")
@@ -52,7 +52,10 @@ def transform_map_to_view(level: Dict[str, Any]) -> List[List[Tuple[float, float
     ])
 
     # Final transformation matrix
-    final_matrix = perspective_matrix @ rotate_x_matrix @ rotate_y_matrix @ transform_matrix.copy()
+    if side:
+        final_matrix = perspective_matrix @ rotate_x_matrix @ rotate_y_matrix @ transform_matrix.copy()
+    else:
+        final_matrix = perspective_matrix @ rotate_x_matrix @ transform_matrix.copy()
 
     # Transform each map point to view point
     out_pos = []
@@ -76,9 +79,11 @@ def transform_map_to_view(level: Dict[str, Any]) -> List[List[Tuple[float, float
 
 if __name__ == "__main__":
     # Usage and Testing
-    from src.cache import get_map
-    map = get_map('1-7')
-    res = transform_map_to_view(map)
+    from src.cache import get_map_by_code
+    map = get_map_by_code('1-7')
+    res = transform_map_to_view(map, True)
     # Note: result seems to have reversed x and y, compared to showen on map.ark-nights.com
     # the left most deployable position
-    logger.info(f"Left most deployable position: {res[3][1]}")
+    logger.info(f"Left most deployable position with side view: {res[3][1]}")
+    res = transform_map_to_view(map, False)
+    logger.info(f"Left most deployable position with front view: {res[3][1]}")

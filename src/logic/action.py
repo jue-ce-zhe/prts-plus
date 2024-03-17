@@ -29,7 +29,8 @@ class Action:
     direction: Optional[DirectionType] = None
     alias: Optional[str] = None
     avatar_pos: Optional[Tuple[float, float]] = None
-    view_pos: Optional[Tuple[float, float]] = None
+    view_pos_front: Optional[Tuple[float, float]] = None
+    view_pos_side: Optional[Tuple[float, float]] = None
 
     def get_game_time(self):
         return GameTime(self.cost, self.tick)

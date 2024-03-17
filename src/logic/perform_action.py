@@ -97,11 +97,11 @@ def perform_action(action: Action):
 
 if __name__ == "__main__":
     # Usage and testing
-    from src.cache import get_map
+    from src.cache import get_map_by_code
     from src.logic.calc_view import transform_map_to_view
     from src.logic.action import DirectionType
-    map = get_map('1-7')
-    view_map = transform_map_to_view(map)
+    map = get_map_by_code('1-7')
+    view_map = transform_map_to_view(map, True)
     action = Action(12, 0, ActionType.DEPLOY, "山", 1, 3, DirectionType.RIGHT, "", None, view_map[3][1])
     start_time = time.time()
     perform_action(action)
