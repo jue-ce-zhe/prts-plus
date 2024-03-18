@@ -1,0 +1,79 @@
+{
+    "info": {
+        "background_color": "000000FF",
+        "is_joystick": false,
+        "transparent_ESC": false,
+        "transparent_keyboard": true,
+        "transparent_mouse": "Mouse_No_Transparent",
+        "transparent_mouse_windows_raw_move_period": 0,
+        "transparent_wheel": false,
+        "visibility": true
+    },
+    "keymaps": [
+        {
+            "editor_icon_scale": 1,
+            "icon": {
+                "background_color": "00000066",
+                "description": "",
+                "radius_correction": 1,
+                "rel_position": {
+                    "rel_x": 0.7602181620735287,
+                    "rel_y": 0.07419990313845062
+                },
+                "visibility": true
+            },
+            "key": {
+                "device": "mouse",
+                "scan_code": 8,
+                "text": "back_mouse",
+                "virtual_key": 8
+            },
+            "press_actions": [
+                "keyboard_press:158"
+            ],
+            "rel_work_position": {
+                "rel_x": 0.7602181620735287,
+                "rel_y": 0.07419990313845062
+            },
+            "release_actions": [
+                "keyboard_release:158"
+            ],
+            "type": "Macro"
+        },
+        {
+            "editor_icon_scale": 1,
+            "icon": {
+                "background_color": "00000066",
+                "description": "",
+                "radius_correction": 1,
+                "rel_position": {
+                    "rel_x": 0.9379166666666667,
+                    "rel_y": 0.07777777777777778
+                },
+                "visibility": true
+            },
+            "key": {
+                "device": "mouse",
+                "scan_code": 16,
+                "text": "forward_mouse",
+                "virtual_key": 16
+            },
+            "rel_work_position": {
+                "rel_x": 0.9379166666666667,
+                "rel_y": 0.07777777777777778
+            },
+            "type": "Click"
+        }
+    ],
+    "param": {
+        "wheel_policy": {
+            "wheel_step_distance": 0.01,
+            "zoom_first_interval": 16,
+            "zoom_last_idle": 0,
+            "zoom_margin": 20,
+            "zoom_period": 16,
+            "zoom_step_distance": 0.00625,
+            "zoom_steps": 8
+        }
+    }
+}
