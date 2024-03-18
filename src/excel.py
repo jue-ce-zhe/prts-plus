@@ -7,6 +7,7 @@ import dataclasses
 
 from src.logic.action import Action, ActionType, DirectionType
 from src.utils.singleton import Singleton
+from src.utils.error_to_log import ErrorToLog
 from src.logger import logger
 from src.utils.typecheck import get_optional_type
 
@@ -51,11 +52,16 @@ class Excel(metaclass=Singleton):
             self.excel = client.GetActiveObject('Excel.Application')
         except com_error:
             logger.warning("Excel application not found, creating a new one")
-            self.excel = client.Dispatch('Excel.Application')
-            self._own_excel = True
+            try:
+                self.excel = client.Dispatch('Excel.Application')
+                self._own_excel = True
+            except com_error:
+                logger.error("Failed to create Excel application")
+                raise
         
         self.workbook = None
         for wb in self.excel.Workbooks:
+            logger.debug(f"Checking workbook: {os.path.normpath(os.path.abspath(wb.FullName))}")
             if os.path.normpath(os.path.abspath(wb.FullName)) == self.file_path:
                 self.workbook = wb
                 break
@@ -84,9 +90,9 @@ class Excel(metaclass=Singleton):
         def wrapper(excel_instance, *args, **kwargs):
             try:
                 return func(excel_instance, *args, **kwargs)
-            except com_error:
+            except com_error as e:
                 logger.error("Excel connection lost.")
-                raise
+                raise ErrorToLog(f"错误：Excel连接丢失。\n{e}")
         return wrapper
     
     @connection_handler
@@ -130,14 +136,16 @@ class Excel(metaclass=Singleton):
         self.record_sheet.Cells(self.current_row + 1, self.column_loc['cur_exec'] + 1).Value = '→'
 
     def _close(self, save_changes=False):
-        if self.workbook is not None and self._own_workbook:
-            self.workbook.Close(SaveChanges=save_changes)
-            self.workbook = None
-            logger.info(f"Closed Excel file: {self.file_path}")
-        if self.excel is not None and self._own_excel:
-            self.excel.Quit()
-            self.excel = None
-            logger.info("Closed Excel application")
+        # Note: keep it open for now
+        # if self.workbook is not None and self._own_workbook:
+        #     self.workbook.Close(SaveChanges=save_changes)
+        #     self.workbook = None
+        #     logger.info(f"Closed Excel file: {self.file_path}")
+        # if self.excel is not None and self._own_excel:
+        #     self.excel.Quit()
+        #     self.excel = None
+        #     logger.info("Closed Excel application")
+        pass
     
     def __del__(self):
         self._close()
@@ -152,13 +160,13 @@ class Excel(metaclass=Singleton):
         try:
             return self.data[0].index(column_name)
         except ValueError:
-            raise ValueError(f"Column {column_name} not found")
+            raise ErrorToLog(f"错误：列 {column_name} 未找到。")
     
     def locate_row(self, col, row_value):
         for index, row in enumerate(self.data):
             if row[col] == row_value:
                 return index
-        raise ValueError(f"Row {row_value} not found")
+        raise ErrorToLog(f"错误：行 {row_value} 未找到。")
     
     @connection_handler
     def set_control_value(self, control_name, value):
@@ -169,13 +177,13 @@ class Excel(metaclass=Singleton):
     def get_control_value(self, control_name):
         return self.control_sheet.Cells(self.data_loc[control_name][0] + 1, self.data_loc[control_name][1] + 1).Value
     
-    def is_paused(self):
+    def is_paused(self) -> bool:
         return self.get_control_value('cur_status') == '停止中'
     
-    def set_paused(self):
+    def set_paused(self) -> None:
         self.set_control_value('cur_status', '已停止')
 
-    def show_error(self, message):
+    def show_error(self, message) -> None:
         self.set_control_value('err_log', message)
     
     def get_current_action(self):

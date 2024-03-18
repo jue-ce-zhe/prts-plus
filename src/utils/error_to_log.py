@@ -1,0 +1,2 @@
+class ErrorToLog(Exception):
+    pass

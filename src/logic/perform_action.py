@@ -20,7 +20,7 @@ BULLET_THRESHOLD = GameTime(0, actionconfig.BULLET_THRESHOLD)
 FRAME_THRESHOLD = GameTime(0, actionconfig.FRAME_THRESHOLD)
 
 
-class PerformActionError(Exception):
+class PerformLateError(Exception):
     def __init__(self, actual_time: GameTime, scheduled_time: GameTime):
         super().__init__(
             f"Performed action at {actual_time} instead of {scheduled_time}"
@@ -178,9 +178,10 @@ def perform_skill_or_retreat(action: Action):
         # Ex. the leftmost deployable position in the middle row of 1-7
         logger.debug(f"Within frame threshold, entering side view")
         mouseclick(ratioconfig.LAST_OPER_RATIO)
+        time.sleep(actionconfig.GENERAL_WAITTIME)
         pause()
         mouseclick(action.view_pos_side)
-        time.sleep(actionconfig.GENERAL_WAITTIME)
+        time.sleep(actionconfig.DEPLOY_WAITTIME1)
         esc()
         time.sleep(actionconfig.GENERAL_WAITTIME)
 
@@ -201,6 +202,7 @@ def perform_skill_or_retreat(action: Action):
         on_time = False
 
     # Finally, do the action
+    # time.sleep(actionconfig.GENERAL_WAITTIME)
     if action.action_type == ActionType.SKILL:
         mouseclick(ratioconfig.SKILL_RATIO)
         time.sleep(actionconfig.GENERAL_WAITTIME)
@@ -233,7 +235,8 @@ def perform_action(action: Action):
     logger.info(f"Performed action: {action}")
 
     if not on_time:
-        raise PerformActionError(f"Performed action: {action} (not on time)")
+        logger.warning(f"Performed action: {action} (not on time)")
+        raise PerformLateError(get_game_time(), action.get_game_time())
 
 
 if __name__ == "__main__":
