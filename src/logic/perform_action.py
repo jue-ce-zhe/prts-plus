@@ -43,6 +43,7 @@ def perform_deploy(action: Action) -> bool:
     # First, Proceed until we reach the frame threshold
     if get_game_time() + BULLET_THRESHOLD < action.get_game_time():
         # When we have too much time, first resume, then enter bullet time when appropriate
+        logger.debug(f"Too much time, resuming and entering bullet time")
         pause()
         while get_game_time() + BULLET_THRESHOLD < action.get_game_time():
             pass
@@ -54,6 +55,7 @@ def perform_deploy(action: Action) -> bool:
         time.sleep(actionconfig.GENERAL_WAITTIME)
     elif get_game_time() + FRAME_THRESHOLD < action.get_game_time():
         # When we are within the bullet threshold, directly enter bullet time, then resume
+        logger.debug(f"Within bullet threshold, entering bullet time")
         mouseclick(ratioconfig.LAST_OPER_RATIO)
         time.sleep(actionconfig.GENERAL_WAITTIME)
         pause()
@@ -63,6 +65,7 @@ def perform_deploy(action: Action) -> bool:
         time.sleep(actionconfig.GENERAL_WAITTIME)
     else:
         # When we are already within the frame threshold, directly enter bullet time, and don't resume at all
+        logger.debug(f"Within frame threshold, entering bullet time")
         mouseclick(ratioconfig.LAST_OPER_RATIO)
         time.sleep(actionconfig.GENERAL_WAITTIME)
 
@@ -149,6 +152,7 @@ def perform_skill_or_retreat(action: Action):
     # First, Proceed until we reach the bullet threshold
     if get_game_time() + BULLET_THRESHOLD < action.get_game_time():
         # When we have too much time, first resume, then enter bullet time when appropriate
+        logger.debug(f"Too much time, resuming and entering bullet time")
         pause()
         while get_game_time() + BULLET_THRESHOLD < action.get_game_time():
             pass
@@ -160,6 +164,7 @@ def perform_skill_or_retreat(action: Action):
         time.sleep(actionconfig.GENERAL_WAITTIME)
     elif get_game_time() + FRAME_THRESHOLD < action.get_game_time():
         # When we are within the bullet threshold, resume and enter bullet time, quickly
+        logger.debug(f"Within bullet threshold, entering bullet time")
         pause()
         mouseclick(action.view_pos_front)
         time.sleep(actionconfig.GENERAL_WAITTIME)
@@ -171,6 +176,7 @@ def perform_skill_or_retreat(action: Action):
         # When we are already within the frame threshold, enter side view first, then try to click
         # Note: Here the click may fail, since it is not guaranteed that the operator can be selected from side view
         # Ex. the leftmost deployable position in the middle row of 1-7
+        logger.debug(f"Within frame threshold, entering side view")
         mouseclick(ratioconfig.LAST_OPER_RATIO)
         pause()
         mouseclick(action.view_pos_side)
