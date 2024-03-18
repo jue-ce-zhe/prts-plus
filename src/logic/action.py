@@ -7,16 +7,16 @@ from src.logic.game_time import GameTime
 from src.logger import logger
 
 class ActionType(Enum):
-    DEPLOY = "Deploy"
-    SKILL = "Skill"
-    RETREAT = "Retreat"
+    DEPLOY = "部署"
+    SKILL = "技能"
+    RETREAT = "撤退"
 
 class DirectionType(Enum):
-    UP = "Up"
-    DOWN = "Down"
-    LEFT = "Left"
-    RIGHT = "Right"
-    NONE = "None"
+    UP = "上"
+    DOWN = "下"
+    LEFT = "左"
+    RIGHT = "右"
+    NONE = "无"
 
 @dataclasses.dataclass(order=True)
 class Action:
