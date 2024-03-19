@@ -1,4 +1,5 @@
 import time
+from typing import Callable
 
 from src.logger import logger
 from src.config import GameRatioConfig as ratioconfig
@@ -35,32 +36,39 @@ class PerformLateError(Exception):
 
     def __repr__(self):
         return f"PerformActionError({self.actual_time}, {self.scheduled_time})"
+    
+class UserPausedError(Exception):
+    pass
 
+def wait_until_threshold(target_time: GameTime, threshold: GameTime, user_paused: Callable[[], bool]) -> None:
+    while get_game_time() + threshold < target_time:
+        if user_paused():
+            # Pause the game first
+            esc()
+            raise UserPausedError()
 
-def perform_deploy(action: Action) -> bool:
+def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
     on_time = True
+    target_time = action.get_game_time()
     # Note: Pause invariant: Here the game is paused
     # First, Proceed until we reach the frame threshold
-    if get_game_time() + BULLET_THRESHOLD < action.get_game_time():
+    if get_game_time() + BULLET_THRESHOLD < target_time:
         # When we have too much time, first resume, then enter bullet time when appropriate
         logger.debug(f"Too much time, resuming and entering bullet time")
         pause()
-        while get_game_time() + BULLET_THRESHOLD < action.get_game_time():
-            pass
+        wait_until_threshold(target_time, BULLET_THRESHOLD, user_paused)
         mouseclick(ratioconfig.LAST_OPER_RATIO)
         time.sleep(actionconfig.GENERAL_WAITTIME)
-        while get_game_time() + FRAME_THRESHOLD < action.get_game_time():
-            pass
+        wait_until_threshold(target_time, FRAME_THRESHOLD, user_paused)
         esc()
         time.sleep(actionconfig.GENERAL_WAITTIME)
-    elif get_game_time() + FRAME_THRESHOLD < action.get_game_time():
+    elif get_game_time() + FRAME_THRESHOLD < target_time:
         # When we are within the bullet threshold, directly enter bullet time, then resume
         logger.debug(f"Within bullet threshold, entering bullet time")
         mouseclick(ratioconfig.LAST_OPER_RATIO)
         time.sleep(actionconfig.GENERAL_WAITTIME)
         pause()
-        while get_game_time() + FRAME_THRESHOLD < action.get_game_time():
-            pass
+        wait_until_threshold(target_time, FRAME_THRESHOLD, user_paused)
         esc()
         time.sleep(actionconfig.GENERAL_WAITTIME)
     else:
@@ -72,10 +80,12 @@ def perform_deploy(action: Action) -> bool:
     # Note: Pause invariant: Here the game is paused
     # and also, we have selected the last operator to be under bullet time
     # Now, proceed frame by frame until we reach the target time
-    while get_game_time() < action.get_game_time():
+    while get_game_time() < target_time:
         pause()
         time.sleep(actionconfig.FRAME_WAITTIME1)
         esc()
+        if user_paused():
+            raise UserPausedError()
         time.sleep(actionconfig.FRAME_WAITTIME2)
 
     # Finally, do the action
@@ -91,6 +101,12 @@ def perform_deploy(action: Action) -> bool:
         action.avatar_pos[1] - actionconfig.DEPLOY_DRAG_RATIO,
     )
 
+    # Note: Pause invariant: Here the game is paused
+
+    # Final check if user paused
+    if user_paused():
+        raise UserPausedError()
+
     # Deploy the operator
     pause()
     mousedown(action.avatar_pos)
@@ -100,9 +116,9 @@ def perform_deploy(action: Action) -> bool:
     time.sleep(actionconfig.DEPLOY_WAITTIME2)
 
     # Check if we are on time
-    if get_game_time() != action.get_game_time():
+    if get_game_time() != target_time:
         logger.warning(
-            f"Game time mismatch, performed action at {get_game_time()} instead of {action.get_game_time()}"
+            f"Game time mismatch, performed action at {get_game_time()} instead of {target_time}"
         )
         on_time = False
 
@@ -146,30 +162,28 @@ def perform_deploy(action: Action) -> bool:
     return on_time
 
 
-def perform_skill_or_retreat(action: Action):
+def perform_skill_or_retreat(action: Action, user_paused: Callable[[], bool]):
     on_time = True
+    target_time = action.get_game_time()
     # Note: Pause invariant: Here the game is paused
     # First, Proceed until we reach the bullet threshold
-    if get_game_time() + BULLET_THRESHOLD < action.get_game_time():
+    if get_game_time() + BULLET_THRESHOLD < target_time:
         # When we have too much time, first resume, then enter bullet time when appropriate
         logger.debug(f"Too much time, resuming and entering bullet time")
         pause()
-        while get_game_time() + BULLET_THRESHOLD < action.get_game_time():
-            pass
+        wait_until_threshold(target_time, BULLET_THRESHOLD, user_paused)
         mouseclick(action.view_pos_front)
         time.sleep(actionconfig.GENERAL_WAITTIME)
-        while get_game_time() + FRAME_THRESHOLD < action.get_game_time():
-            pass
+        wait_until_threshold(target_time, FRAME_THRESHOLD, user_paused)
         esc()
         time.sleep(actionconfig.GENERAL_WAITTIME)
-    elif get_game_time() + FRAME_THRESHOLD < action.get_game_time():
+    elif get_game_time() + FRAME_THRESHOLD < target_time:
         # When we are within the bullet threshold, resume and enter bullet time, quickly
         logger.debug(f"Within bullet threshold, entering bullet time")
         pause()
         mouseclick(action.view_pos_front)
         time.sleep(actionconfig.GENERAL_WAITTIME)
-        while get_game_time() + FRAME_THRESHOLD < action.get_game_time():
-            pass
+        wait_until_threshold(target_time, FRAME_THRESHOLD, user_paused)
         esc()
         time.sleep(actionconfig.GENERAL_WAITTIME)
     else:
@@ -188,18 +202,24 @@ def perform_skill_or_retreat(action: Action):
     # Note: Pause invariant: Here the game is paused
     # and also, we have selected the target operator to be under bullet time
     # Now, proceed frame by frame until we reach the target time
-    while get_game_time() < action.get_game_time():
+    while get_game_time() < target_time:
         pause()
         time.sleep(actionconfig.FRAME_WAITTIME1)
         esc()
+        if user_paused():
+            raise UserPausedError()
         time.sleep(actionconfig.FRAME_WAITTIME2)
 
     # Check if we are on time
-    if get_game_time() != action.get_game_time():
+    if get_game_time() != target_time:
         logger.warning(
-            f"Game time mismatch, performed action at {get_game_time()} instead of {action.get_game_time()}"
+            f"Game time mismatch, performed action at {get_game_time()} instead of {target_time}"
         )
         on_time = False
+
+    # Final check if user paused
+    if user_paused():
+        raise UserPausedError()
 
     # Finally, do the action
     # time.sleep(actionconfig.GENERAL_WAITTIME)
@@ -216,18 +236,18 @@ def perform_skill_or_retreat(action: Action):
     return on_time
 
 
-def perform_action(action: Action):
+def perform_action(action: Action, user_paused: Callable[[], bool]) -> None:
     logger.debug(f"Performing action: {action}")
     # Note: Pause invariant: Here the game is paused
 
     on_time = True
     if action.action_type == ActionType.DEPLOY:
-        on_time = perform_deploy(action)
+        on_time = perform_deploy(action, user_paused)
     elif (
         action.action_type == ActionType.SKILL
         or action.action_type == ActionType.RETREAT
     ):
-        on_time = perform_skill_or_retreat(action)
+        on_time = perform_skill_or_retreat(action, user_paused)
     else:
         raise ValueError(f"Invalid action type: {action.action_type}")
 
@@ -236,7 +256,7 @@ def perform_action(action: Action):
 
     if not on_time:
         logger.warning(f"Performed action: {action} (not on time)")
-        raise PerformLateError(get_game_time(), action.get_game_time())
+        raise PerformLateError(get_game_time(), target_time)
 
 
 if __name__ == "__main__":

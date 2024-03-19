@@ -4,7 +4,7 @@ import logging
 from src.logger import logger
 from src.excel import Excel, StatusColor
 from src.config import PerformActionConfig as actionconfig
-from src.logic.perform_action import perform_action, PerformLateError
+from src.logic.perform_action import perform_action, PerformLateError, UserPausedError
 from src.logic.calc_view import transform_map_to_view
 from src.logic.game_time import GameTime
 from src.logic.action import ActionType
@@ -24,6 +24,10 @@ def main(file_path, debug):
     excel = Excel(file_path)
 
     try:
+        # Define the check pause closure
+        def is_paused():
+            return excel.is_paused()
+        
         # Load settings
         map_code = excel.get_setting('map_code')
         map_name = excel.get_setting('map_name')
@@ -99,10 +103,12 @@ def main(file_path, debug):
             
             # Perform the action
             try:
-                perform_action(action)
+                perform_action(action, is_paused)
                 excel.set_result(StatusColor.SUCCESS)
             except PerformLateError as e:
                 excel.set_result(StatusColor.WARNING)
+            except UserPausedError as e:
+                raise ErrorToLog("用户停止。")
             except Exception as e:
                 excel.set_result(StatusColor.FAILURE)
                 raise
