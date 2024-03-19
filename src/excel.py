@@ -129,8 +129,10 @@ class Excel(metaclass=Singleton):
         last_row = len(self.data)
         # Clear all cells in column '当前执行' and '运行结果'
         logger.debug(f"Clearing cells from 2 to {last_row} in column '当前执行'({self.column_loc['cur_exec'] + 1}) and '运行结果'({self.column_loc['result'] + 1})")
-        self.record_sheet.Range(self.record_sheet.Cells(2, self.column_loc['cur_exec'] + 1), self.record_sheet.Cells(last_row, self.column_loc['cur_exec'] + 1)).Clear()
-        self.record_sheet.Range(self.record_sheet.Cells(2, self.column_loc['result'] + 1), self.record_sheet.Cells(last_row, self.column_loc['result'] + 1)).Clear()
+        self.record_sheet.Range(self.record_sheet.Cells(self.current_row + 1, self.column_loc['cur_exec'] + 1), 
+                                self.record_sheet.Cells(last_row, self.column_loc['cur_exec'] + 1)).ClearContents()
+        self.record_sheet.Range(self.record_sheet.Cells(self.current_row + 1, self.column_loc['result'] + 1), 
+                                self.record_sheet.Cells(last_row, self.column_loc['result'] + 1)).Interior.ColorIndex = -4142 # xlColorIndexNone
 
         # Set pointer to the first action
         self.record_sheet.Cells(self.current_row + 1, self.column_loc['cur_exec'] + 1).Value = '→'
