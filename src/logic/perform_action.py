@@ -91,11 +91,20 @@ def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
     # Finally, do the action
     # Find the avatar position
     locate_avatar(action)
-    mouseclick(action.avatar_pos)
-    time.sleep(actionconfig.GENERAL_WAITTIME)
 
-    # Now the operator is chosen, find avatar position again since it may have changed
-    locate_avatar(action)
+    # Check if we have actually already selected the operator
+    # This may happen when the target operator is the last operator
+    if action.avatar_pos[1] < ratioconfig.OPERATOR_SELECTED_RATIO:
+        logger.debug(f"Operator {action.oper} is already selected")
+    else:
+        # Select the operator
+        mouseclick(action.avatar_pos)
+        time.sleep(actionconfig.GENERAL_WAITTIME)
+
+        # Now the operator is selected, find avatar position again since it may have changed
+        locate_avatar(action)
+
+    # Calculate the middle position for dragging
     middle_pos = (
         action.avatar_pos[0],
         action.avatar_pos[1] - ratioconfig.DEPLOY_DRAG_RATIO,

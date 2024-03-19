@@ -16,6 +16,7 @@ class GameRatioConfig:
     SKILL_RATIO = (0.7, 0.6) # (x, y)
     DIRECTION_RATIO = 0.2
     DEPLOY_DRAG_RATIO = 0.03
+    OPERATOR_SELECTED_RATIO = 0.9
 
 class ImageProcessingConfig:
     WHITE_THRESHOLD = 160
