@@ -34,6 +34,7 @@ def main(file_path, debug):
         max_tick = excel.get_setting('max_tick')
         wait_time1 = excel.get_setting('wait_time1')
         wait_time2 = excel.get_setting('wait_time2')
+        wait_time3 = excel.get_setting('wait_time3')
         bullet_threshold = excel.get_setting('bullet_threshold')
         frame_threshold = excel.get_setting('frame_threshold')
 
@@ -41,9 +42,11 @@ def main(file_path, debug):
         if max_tick is not None:
             GameTime.set_tick_max(max_tick)
         if wait_time1 is not None:
-            actionconfig.DEPLOY_WAITTIME1 = wait_time1
+            actionconfig.MINIMUM_WAITTIME = wait_time1
         if wait_time2 is not None:
-            actionconfig.GENERAL_WAITTIME = wait_time2
+            actionconfig.FRAME_WAITTIME = wait_time2
+        if wait_time3 is not None:
+            actionconfig.GENERAL_WAITTIME = wait_time3
         if bullet_threshold is not None:
             actionconfig.BULLET_THRESHOLD = bullet_threshold
         if frame_threshold is not None:

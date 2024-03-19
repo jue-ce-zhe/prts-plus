@@ -15,6 +15,7 @@ class GameRatioConfig:
     RETREAT_RATIO = (0.46, 0.3) # (x, y)
     SKILL_RATIO = (0.7, 0.6) # (x, y)
     DIRECTION_RATIO = 0.2
+    DEPLOY_DRAG_RATIO = 0.03
 
 class ImageProcessingConfig:
     WHITE_THRESHOLD = 160
@@ -34,10 +35,6 @@ class GameTimeConfig:
 class PerformActionConfig:
     BULLET_THRESHOLD = 20
     FRAME_THRESHOLD = 2
-    FRAME_WAITTIME1 = 0.1
-    FRAME_WAITTIME2 = 0.3
-    DEPLOY_DRAG_RATIO = 0.03
-    DEPLOY_WAITTIME1 = 0.02
-    DEPLOY_WAITTIME2 = 0.3
-    DEPLOY_WAITTIME3 = 0.3
+    MINIMUM_WAITTIME = 0.02
+    FRAME_WAITTIME = 0.1
     GENERAL_WAITTIME = 0.3

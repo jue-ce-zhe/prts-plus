@@ -111,6 +111,7 @@ class Excel(metaclass=Singleton):
         self.data_loc['max_tick'] = (self.locate_row(settings_col, '每费帧数'), settings_col + 1)
         self.data_loc['wait_time1'] = (self.locate_row(settings_col, '等待时间1'), settings_col + 1)
         self.data_loc['wait_time2'] = (self.locate_row(settings_col, '等待时间2'), settings_col + 1)
+        self.data_loc['wait_time3'] = (self.locate_row(settings_col, '等待时间3'), settings_col + 1)
         self.data_loc['bullet_threshold'] = (self.locate_row(settings_col, '阈值-子弹时间'), settings_col + 1)
         self.data_loc['frame_threshold'] = (self.locate_row(settings_col, '阈值-逐帧定位'), settings_col + 1)
 

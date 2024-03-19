@@ -82,11 +82,11 @@ def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
     # Now, proceed frame by frame until we reach the target time
     while get_game_time() < target_time:
         pause()
-        time.sleep(actionconfig.FRAME_WAITTIME1)
+        time.sleep(actionconfig.FRAME_WAITTIME)
         esc()
         if user_paused():
             raise UserPausedError()
-        time.sleep(actionconfig.FRAME_WAITTIME2)
+        time.sleep(actionconfig.GENERAL_WAITTIME)
 
     # Finally, do the action
     # Find the avatar position
@@ -98,7 +98,7 @@ def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
     locate_avatar(action)
     middle_pos = (
         action.avatar_pos[0],
-        action.avatar_pos[1] - actionconfig.DEPLOY_DRAG_RATIO,
+        action.avatar_pos[1] - ratioconfig.DEPLOY_DRAG_RATIO,
     )
 
     # Note: Pause invariant: Here the game is paused
@@ -111,9 +111,9 @@ def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
     pause()
     mousedown(action.avatar_pos)
     mousemove(middle_pos)
-    time.sleep(actionconfig.DEPLOY_WAITTIME1)
+    time.sleep(actionconfig.MINIMUM_WAITTIME)
     esc()
-    time.sleep(actionconfig.DEPLOY_WAITTIME2)
+    time.sleep(actionconfig.GENERAL_WAITTIME)
 
     # Check if we are on time
     if get_game_time() != target_time:
@@ -124,7 +124,7 @@ def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
 
     # Do the rest of the deploy
     mousemove(action.view_pos_side)
-    time.sleep(actionconfig.DEPLOY_WAITTIME3)
+    time.sleep(actionconfig.GENERAL_WAITTIME)
     mouseup(action.view_pos_side)
     time.sleep(actionconfig.GENERAL_WAITTIME)
 
@@ -195,7 +195,7 @@ def perform_skill_or_retreat(action: Action, user_paused: Callable[[], bool]):
         time.sleep(actionconfig.GENERAL_WAITTIME)
         pause()
         mouseclick(action.view_pos_side)
-        time.sleep(actionconfig.DEPLOY_WAITTIME1)
+        time.sleep(actionconfig.MINIMUM_WAITTIME)
         esc()
         time.sleep(actionconfig.GENERAL_WAITTIME)
 
@@ -204,11 +204,11 @@ def perform_skill_or_retreat(action: Action, user_paused: Callable[[], bool]):
     # Now, proceed frame by frame until we reach the target time
     while get_game_time() < target_time:
         pause()
-        time.sleep(actionconfig.FRAME_WAITTIME1)
+        time.sleep(actionconfig.FRAME_WAITTIME)
         esc()
         if user_paused():
             raise UserPausedError()
-        time.sleep(actionconfig.FRAME_WAITTIME2)
+        time.sleep(actionconfig.GENERAL_WAITTIME)
 
     # Check if we are on time
     if get_game_time() != target_time:
@@ -256,7 +256,7 @@ def perform_action(action: Action, user_paused: Callable[[], bool]) -> None:
 
     if not on_time:
         logger.warning(f"Performed action: {action} (not on time)")
-        raise PerformLateError(get_game_time(), target_time)
+        raise PerformLateError(get_game_time(), action.get_game_time())
 
 
 if __name__ == "__main__":
