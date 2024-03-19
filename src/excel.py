@@ -91,7 +91,7 @@ class Excel(metaclass=Singleton):
                 return func(excel_instance, *args, **kwargs)
             except com_error as e:
                 logger.error("Excel connection lost.")
-                raise ErrorToLog(f"错误：Excel连接丢失。\n{e}")
+                raise ErrorToLog(f"错误：Excel连接出错。\n{e}")
         return wrapper
     
     @connection_handler
@@ -128,11 +128,11 @@ class Excel(metaclass=Singleton):
     def _reset_cells(self):
         last_row = len(self.data)
         # Clear all cells in column '当前执行' and '运行结果'
-        logger.debug(f"Clearing cells from 2 to {last_row} in column '当前执行'({self.column_loc['cur_exec'] + 1}) and '运行结果'({self.column_loc['result'] + 1})")
+        logger.debug(f"Clearing cells from {self.current_row + 1} to {last_row} in column '当前执行'({self.column_loc['cur_exec'] + 1}) and '运行结果'({self.column_loc['result'] + 1})")
         self.record_sheet.Range(self.record_sheet.Cells(self.current_row + 1, self.column_loc['cur_exec'] + 1), 
-                                self.record_sheet.Cells(last_row, self.column_loc['cur_exec'] + 1)).ClearContents()
+                                self.record_sheet.Cells(last_row, self.column_loc['cur_exec'] + 1)).Value = None
         self.record_sheet.Range(self.record_sheet.Cells(self.current_row + 1, self.column_loc['result'] + 1), 
-                                self.record_sheet.Cells(last_row, self.column_loc['result'] + 1)).Interior.ColorIndex = -4142 # xlColorIndexNone
+                                self.record_sheet.Cells(last_row, self.column_loc['result'] + 1)).Interior.ColorIndex = -4142 # xlNone
 
         # Set pointer to the first action
         self.record_sheet.Cells(self.current_row + 1, self.column_loc['cur_exec'] + 1).Value = '→'
