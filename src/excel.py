@@ -1,4 +1,3 @@
-import shutil
 from win32com import client, __gen_path__
 from pywintypes import com_error
 import functools
@@ -18,8 +17,7 @@ ACTION_COLUMN_NAME_MAPPING = {
     '帧数': 'tick',
     '操作': 'action_type',
     '干员': 'oper',
-    'x坐标': 'pos_x',
-    'y坐标': 'pos_y',
+    '坐标': 'pos',
     '朝向': 'direction',
     '简称': 'alias',
 }
@@ -30,6 +28,7 @@ class StatusColor:
     WARNING: int = 0x77FFFF # yellow
     FAILURE: int = 0x7777FF # red
 
+# Note: All excel index should be 0-based in the code, adding 1 when interacting with Excel
 class Excel(metaclass=Singleton):
     def __init__(self, file_path):
         self.file_path = file_path

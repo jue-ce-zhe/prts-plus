@@ -10,6 +10,7 @@ from src.logic.game_time import GameTime
 from src.logic.action import ActionType
 from src.cache import get_map_by_code, get_map_by_name
 from src.utils.error_to_log import ErrorToLog
+from src.logic.convert_pos import convert_position
 
 def main(file_path, debug):
     # Set the logger level
@@ -55,6 +56,8 @@ def main(file_path, debug):
         view_data_front = transform_map_to_view(map_data, False)
         view_data_side = transform_map_to_view(map_data, True)
 
+        map_height, map_width = map_data["height"], map_data["width"]
+
         # Initialize operator location mapping and operator alias mapping
         operator_loc = {}
         operator_alias = {}
@@ -68,6 +71,9 @@ def main(file_path, debug):
                 logger.warning(f"Invalid action: {action}")
                 logger.info("Terminating the program")
                 break
+
+            # Calculate the tile position from raw position
+            convert_position(action, map_height, map_width)
             
             # Tackle alias if needed
             if action.alias is not None:
@@ -80,16 +86,16 @@ def main(file_path, debug):
 
             # Memorize operator location if needed
             if action.action_type == ActionType.DEPLOY:
-                operator_loc[action.oper] = (action.pos_x, action.pos_y)
+                operator_loc[action.oper] = action.tile_pos
                 logger.info(f"Memorized {action.oper} location at {operator_loc[action.oper]}")
             else:
-                if action.pos_x is None or action.pos_y is None:
-                    action.pos_x, action.pos_y = operator_loc[action.oper]
-                    logger.info(f"Auto set {action.oper} location to {action.pos_x}, {action.pos_y}")
+                if action.tile_pos is None:
+                    action.tile_pos = operator_loc[action.oper]
+                    logger.info(f"Auto set {action.oper} location to {action.tile_pos}")
 
             # Fetch view position
-            action.view_pos_front = view_data_front[action.pos_y][action.pos_x]
-            action.view_pos_side = view_data_side[action.pos_y][action.pos_x]
+            action.view_pos_front = view_data_front[action.tile_pos[1]][action.tile_pos[0]]
+            action.view_pos_side = view_data_side[action.tile_pos[1]][action.tile_pos[0]]
             
             # Perform the action
             try:
