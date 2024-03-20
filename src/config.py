@@ -23,6 +23,8 @@ class ImageProcessingConfig:
     SCREEN_STANDARD_SIZE = (1280, 720)
     AVATAR_STANDARD_SIZE = (120, 120)
     AVATAR_CROP_SIZE = (60, 60)
+    OCR_CONFIDENCE_THRESHOLD = 60
+    TEMPLATE_MATCH_THRESHOLD = 0.8
 
 class ViewCalculationConfig:
     FROM_RATIO = 9 / 16

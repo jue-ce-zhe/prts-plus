@@ -6,6 +6,7 @@ from src.mumu.mumu_vision import capture_game_window
 from src.logger import logger
 from src.config import GameRatioConfig as ratioconfig
 from src.config import ImageProcessingConfig as imgconfig
+from src.utils.error_to_log import ErrorToLog
 
 def locate_avatar(action: Action) -> None:
     """
@@ -21,8 +22,9 @@ def locate_avatar(action: Action) -> None:
         if val > max_val:
             max_val, max_pos, max_avatar = val, pos, avatar
     
-    if max_val < 0.8:
-        logger.warning(f"Could not find a good matching avatar for {action.oper}, with max_val: {max_val}")
+    if max_val < imgconfig.TEMPLATE_MATCH_THRESHOLD:
+        logger.error(f"Could not find a good matching avatar for {action.oper}, with max_val: {max_val}")
+        raise ErrorToLog(f"未在待部署区找到干员{action.oper}。")
     
     if len(avatars) > 1:
         logger.info(f"Found best matching avatar for {action.oper}")

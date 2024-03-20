@@ -8,6 +8,8 @@ from src.config import GameRatioConfig as ratioconfig
 from src.config import ImageProcessingConfig as imgconfig
 from src.logic.game_time import GameTime
 from src.mumu.mumu_vision import capture_game_window
+from src.utils.error_to_log import ErrorToLog
+from src.logger import logger
 
 @lru_cache(maxsize=120)
 def get_tick(cost_bar_area_bytes: bytes) -> int:
@@ -55,6 +57,9 @@ def get_cost(cost_number_area_bytes: bytes, width: int, height: int) -> int:
     with tesserocr.PyTessBaseAPI(lang='arknights_digit', psm=tesserocr.PSM.SINGLE_WORD) as api:
         api.SetImage(cost_number_area)
         cost = api.GetUTF8Text()
+        confidence = api.MeanTextConf()
+        if confidence < imgconfig.OCR_CONFIDENCE_THRESHOLD:
+            raise ErrorToLog(f"无法识别当前费用。")
 
     # Filter out any non-digit characters from the OCR result
     cost = "".join(filter(str.isdigit, cost))
@@ -63,7 +68,7 @@ def get_cost(cost_number_area_bytes: bytes, width: int, height: int) -> int:
     try:
         cost = int(cost)
     except ValueError:
-        cost = -1
+        raise ErrorToLog(f"无法识别当前费用。")
 
     return cost
 
