@@ -91,7 +91,7 @@ class Excel(metaclass=Singleton):
                 return func(excel_instance, *args, **kwargs)
             except com_error as e:
                 logger.error("Excel connection lost.")
-                raise ErrorToLog(f"错误：Excel连接出错。\n{e}")
+                raise ErrorToLog(f"Excel连接出错。\n{e}")
         return wrapper
     
     @connection_handler
@@ -162,13 +162,13 @@ class Excel(metaclass=Singleton):
         try:
             return self.data[0].index(column_name)
         except ValueError:
-            raise ErrorToLog(f"错误：列 {column_name} 未找到。")
+            raise ErrorToLog(f"列 {column_name} 未找到。")
     
     def locate_row(self, col, row_value):
         for index, row in enumerate(self.data):
             if row[col] == row_value:
                 return index
-        raise ErrorToLog(f"错误：行 {row_value} 未找到。")
+        raise ErrorToLog(f"行 {row_value} 未找到。")
     
     @connection_handler
     def set_control_value(self, control_name, value):

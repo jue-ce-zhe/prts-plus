@@ -126,7 +126,7 @@ def main(file_path, debug):
             excel.next_action()
     except ErrorToLog as e:
         logger.error(f"Error occurred: {e}")
-        excel.show_error(str(e))
+        excel.show_error(f"错误：{e}")
     except Exception as e:
         logger.error(f"Error occurred: {e}")
         excel.show_error(f"未定义错误：{e}")
