@@ -189,6 +189,8 @@ class Excel(metaclass=Singleton):
         self.set_control_value('err_log', message)
     
     def get_current_action(self):
+        if self.current_row >= len(self.data):
+            return Action()
         return self.get_action(self.current_row)
     
     def load_cell_with_type(self, row, col, cell_type):
