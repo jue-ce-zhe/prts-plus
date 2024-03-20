@@ -43,14 +43,19 @@ def main(file_path, debug):
             GameTime.set_tick_max(max_tick)
         if wait_time1 is not None:
             actionconfig.MINIMUM_WAITTIME = wait_time1
+            logger.debug(f"Set minimum wait time to {actionconfig.MINIMUM_WAITTIME}")
         if wait_time2 is not None:
             actionconfig.FRAME_WAITTIME = wait_time2
+            logger.debug(f"Set frame wait time to {actionconfig.FRAME_WAITTIME}")
         if wait_time3 is not None:
             actionconfig.GENERAL_WAITTIME = wait_time3
+            logger.debug(f"Set general wait time to {actionconfig.GENERAL_WAITTIME}")
         if bullet_threshold is not None:
             actionconfig.BULLET_THRESHOLD = bullet_threshold
+            logger.debug(f"Set bullet threshold to {actionconfig.BULLET_THRESHOLD}")
         if frame_threshold is not None:
             actionconfig.FRAME_THRESHOLD = frame_threshold
+            logger.debug(f"Set frame threshold to {actionconfig.FRAME_THRESHOLD}")
 
         # Load map
         if map_name is not None:
@@ -81,6 +86,17 @@ def main(file_path, debug):
 
             # Calculate the tile position from raw position
             convert_position(action, map_height, map_width)
+
+            # Memorize operator location if needed
+            if action.action_type == ActionType.DEPLOY:
+                operator_loc[action.oper] = action.tile_pos
+                if action.alias is not None:
+                    operator_loc[action.alias] = action.tile_pos
+                logger.info(f"Memorized {action.oper} location at {operator_loc[action.oper]}")
+            else:
+                if action.tile_pos is None:
+                    action.tile_pos = operator_loc[action.oper]
+                    logger.info(f"Auto set {action.oper} location to {action.tile_pos}")
             
             # Tackle alias if needed
             if action.alias is not None:
@@ -90,15 +106,6 @@ def main(file_path, debug):
             if action.oper in operator_alias.keys():
                 logger.info(f"Detected alias, replace {action.oper} with {operator_alias[action.oper]}")
                 action.oper = operator_alias[action.oper]
-
-            # Memorize operator location if needed
-            if action.action_type == ActionType.DEPLOY:
-                operator_loc[action.oper] = action.tile_pos
-                logger.info(f"Memorized {action.oper} location at {operator_loc[action.oper]}")
-            else:
-                if action.tile_pos is None:
-                    action.tile_pos = operator_loc[action.oper]
-                    logger.info(f"Auto set {action.oper} location to {action.tile_pos}")
 
             # Fetch view position
             action.view_pos_front = view_data_front[action.tile_pos[1]][action.tile_pos[0]]

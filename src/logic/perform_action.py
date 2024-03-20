@@ -17,9 +17,6 @@ from src.mumu.mumu_controller import (
     mousemove,
 )
 
-BULLET_THRESHOLD = GameTime(0, actionconfig.BULLET_THRESHOLD)
-FRAME_THRESHOLD = GameTime(0, actionconfig.FRAME_THRESHOLD)
-
 
 class PerformLateError(Exception):
     def __init__(self, actual_time: GameTime, scheduled_time: GameTime):
@@ -36,18 +33,28 @@ class PerformLateError(Exception):
 
     def __repr__(self):
         return f"PerformActionError({self.actual_time}, {self.scheduled_time})"
-    
+
+
 class UserPausedError(Exception):
     pass
 
-def wait_until_threshold(target_time: GameTime, threshold: GameTime, user_paused: Callable[[], bool]) -> None:
+
+def wait_until_threshold(
+    target_time: GameTime, threshold: GameTime, user_paused: Callable[[], bool]
+) -> None:
     while get_game_time() + threshold < target_time:
         if user_paused():
             # Pause the game first
             esc()
             raise UserPausedError()
 
-def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
+
+def perform_deploy(
+    action: Action,
+    user_paused: Callable[[], bool],
+    BULLET_THRESHOLD: GameTime,
+    FRAME_THRESHOLD: GameTime,
+) -> bool:
     on_time = True
     target_time = action.get_game_time()
     # Note: Pause invariant: Here the game is paused
@@ -171,7 +178,12 @@ def perform_deploy(action: Action, user_paused: Callable[[], bool]) -> bool:
     return on_time
 
 
-def perform_skill_or_retreat(action: Action, user_paused: Callable[[], bool]):
+def perform_skill_or_retreat(
+    action: Action,
+    user_paused: Callable[[], bool],
+    BULLET_THRESHOLD: GameTime,
+    FRAME_THRESHOLD: GameTime,
+) -> bool:
     on_time = True
     target_time = action.get_game_time()
     # Note: Pause invariant: Here the game is paused
@@ -249,14 +261,19 @@ def perform_action(action: Action, user_paused: Callable[[], bool]) -> None:
     logger.debug(f"Performing action: {action}")
     # Note: Pause invariant: Here the game is paused
 
+    BULLET_THRESHOLD = GameTime(0, actionconfig.BULLET_THRESHOLD)
+    FRAME_THRESHOLD = GameTime(0, actionconfig.FRAME_THRESHOLD)
+
     on_time = True
     if action.action_type == ActionType.DEPLOY:
-        on_time = perform_deploy(action, user_paused)
+        on_time = perform_deploy(action, user_paused, BULLET_THRESHOLD, FRAME_THRESHOLD)
     elif (
         action.action_type == ActionType.SKILL
         or action.action_type == ActionType.RETREAT
     ):
-        on_time = perform_skill_or_retreat(action, user_paused)
+        on_time = perform_skill_or_retreat(
+            action, user_paused, BULLET_THRESHOLD, FRAME_THRESHOLD
+        )
     else:
         raise ValueError(f"Invalid action type: {action.action_type}")
 
