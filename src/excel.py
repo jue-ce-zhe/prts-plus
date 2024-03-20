@@ -138,15 +138,14 @@ class Excel(metaclass=Singleton):
         self.record_sheet.Cells(self.current_row + 1, self.column_loc['cur_exec'] + 1).Value = '→'
 
     def _close(self, save_changes=False):
-        # Note: keep it open for now
-        # if self.workbook is not None and self._own_workbook:
-        #     self.workbook.Close(SaveChanges=save_changes)
-        #     self.workbook = None
-        #     logger.info(f"Closed Excel file: {self.file_path}")
-        # if self.excel is not None and self._own_excel:
-        #     self.excel.Quit()
-        #     self.excel = None
-        #     logger.info("Closed Excel application")
+        if self.workbook is not None and self._own_workbook:
+            self.workbook.Close(SaveChanges=save_changes)
+            self.workbook = None
+            logger.info(f"Closed Excel file: {self.file_path}")
+        if self.excel is not None and self._own_excel:
+            self.excel.Quit()
+            self.excel = None
+            logger.info("Closed Excel application")
         pass
     
     def __del__(self):
