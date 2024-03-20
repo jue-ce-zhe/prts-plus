@@ -34,7 +34,7 @@ class GameTimeConfig:
     TICK_MAX_DEFAULT = 30 # default 1 second = 30 ticks
 
 class PerformActionConfig:
-    BULLET_THRESHOLD = 20
+    BULLET_THRESHOLD = 15
     FRAME_THRESHOLD = 2
     MINIMUM_WAITTIME = 0.02
     FRAME_WAITTIME = 0.1
