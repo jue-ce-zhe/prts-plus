@@ -12,6 +12,7 @@ jobs:
       - name: Checkout prts-plus Repository
         uses: actions/checkout@v4
         with:
+          ref: develop
           path: prts-plus
           ssh-key: ${{ secrets.RESOURCE_DEPLOY_KEY }}
 
@@ -22,7 +23,7 @@ jobs:
           git remote add origin https://github.com/yuanyan3060/ArknightsGameResource.git
           git config core.sparseCheckout true
           echo "avatar/*" >> .git/info/sparse-checkout
-          git pull origin develop
+          git pull origin main
           cd ..
           mkdir -p prts-plus/resource/avatar
           cp -r temporary-repo/avatar/* prts-plus/resource/avatar/
@@ -62,4 +63,4 @@ jobs:
           git add resource/
           echo "::endgroup::"
           git diff --staged --quiet || git commit -m "Auto update resources from ArknightsGameResource and MaaAssistantArknights"
-          git push
+          git push origin develop
