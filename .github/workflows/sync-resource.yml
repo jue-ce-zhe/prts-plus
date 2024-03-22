@@ -22,7 +22,7 @@ jobs:
           git remote add origin https://github.com/yuanyan3060/ArknightsGameResource.git
           git config core.sparseCheckout true
           echo "avatar/*" >> .git/info/sparse-checkout
-          git pull origin main
+          git pull origin develop
           cd ..
           mkdir -p prts-plus/resource/avatar
           cp -r temporary-repo/avatar/* prts-plus/resource/avatar/
@@ -40,7 +40,6 @@ jobs:
           cd ..
           mkdir -p prts-plus/resource/map
           cp -r another-temp-repo/resource/Arknights-Tile-Pos/* prts-plus/resource/map/
-          cp another-temp-repo/resource/tasks.json prts-plus/resource/
           cp another-temp-repo/resource/battle_data.json prts-plus/resource/
       
       - name: Generate Mapping JSON
