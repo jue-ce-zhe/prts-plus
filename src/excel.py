@@ -120,8 +120,9 @@ class Excel(metaclass=Singleton):
         self.data_loc['err_log'] = (2, 1) # B3 cell
     
     def _signal_start(self):
-        self.set_control_value('cur_status', '运行中')
-        self.set_control_value('err_log', '')
+        if not self.is_paused():
+            self.set_control_value('cur_status', '运行中')
+            self.set_control_value('err_log', '')
         self.current_row = int(self.get_control_value('cur_row')) - 1
     
     @connection_handler

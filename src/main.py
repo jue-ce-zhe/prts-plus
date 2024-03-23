@@ -19,10 +19,16 @@ def main(file_path, debug, autoenter):
         logger.setLevel(logging.DEBUG)
     else:
         logger.setLevel(logging.WARNING)
-    
-    # Establish the connection to the Excel file
-    logger.info(f"Excel file path: {file_path}")
-    excel = Excel(file_path)
+
+    try:
+        # Establish the connection to the Excel file
+        logger.info(f"Excel file path: {file_path}")
+        excel = Excel(file_path)
+    except Exception as e:
+        logger.error(f"Error occurred: {e}")
+        # Wait for key press to exit
+        logger.info("Press any key to exit.")
+        input()
 
     try:
         # Define the check pause closure
@@ -125,7 +131,7 @@ def main(file_path, debug, autoenter):
                 if e.actual_time > e.scheduled_time + GameTime(1, 0):
                     raise ErrorToLog(f"当前操作晚了超过一费。疑似发生错误。请求人工接管。")
             except UserPausedError as e:
-                raise ErrorToLog("用户停止。")
+                raise ErrorToLog("用户停止。", False)
             except Exception as e:
                 excel.set_result(StatusColor.FAILURE)
                 raise
@@ -139,6 +145,10 @@ def main(file_path, debug, autoenter):
         excel.show_error(f"未定义错误：{e}")
     finally:
         excel.set_paused()
+        if debug:
+            # Wait for key press to exit
+            logger.info("Press any key to exit.")
+            input()
 
 if __name__ == '__main__':
     # Take the only parameter as the Excel file path
