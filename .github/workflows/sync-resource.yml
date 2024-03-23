@@ -12,7 +12,6 @@ jobs:
       - name: Checkout prts-plus Repository
         uses: actions/checkout@v4
         with:
-          ref: develop
           path: prts-plus
           ssh-key: ${{ secrets.RESOURCE_DEPLOY_KEY }}
 
@@ -41,6 +40,7 @@ jobs:
           cd ..
           mkdir -p prts-plus/resource/map
           cp -r another-temp-repo/resource/Arknights-Tile-Pos/* prts-plus/resource/map/
+          cp another-temp-repo/resource/tasks.json prts-plus/resource/
           cp another-temp-repo/resource/battle_data.json prts-plus/resource/
       
       - name: Generate Mapping JSON
@@ -63,4 +63,4 @@ jobs:
           git add resource/
           echo "::endgroup::"
           git diff --staged --quiet || git commit -m "Auto update resources from ArknightsGameResource and MaaAssistantArknights"
-          git push origin develop
+          git push
