@@ -188,13 +188,13 @@ class Excel(metaclass=Singleton):
         self.set_control_value('err_log', message)
     
     def get_current_action(self):
+        logger.info(f"Getting current action at row {self.current_row}")
         if self.current_row >= len(self.data):
             return Action()
         return self.get_action(self.current_row)
     
     def load_cell_with_type(self, row, col, cell_type):
         try:
-            logger.debug(f"Loading cell ({row}, {col}) with type {cell_type}")
             cell_value = self.data[row][col]
             if cell_value is None:
                 return None
@@ -202,7 +202,7 @@ class Excel(metaclass=Singleton):
             actual_type = get_optional_type(cell_type)
             return actual_type(cell_value) if actual_type else None
         except (ValueError, TypeError) as err:
-            logger.debug(f"Failed to load cell ({row}, {col}) with type {cell_type} due to error {err}")
+            logger.warning(f"Failed to load cell ({row}, {col}) with type {cell_type} due to error {err}")
             return None
     
     def get_action(self, row):

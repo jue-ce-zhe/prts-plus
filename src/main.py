@@ -122,7 +122,7 @@ def main(file_path, debug, autoenter):
                 excel.set_result(StatusColor.SUCCESS)
             except PerformLateError as e:
                 excel.set_result(StatusColor.WARNING)
-                if e.actual_time > e.scheduled_time + GameTime.get_tick_max():
+                if e.actual_time > e.scheduled_time + GameTime(1, 0):
                     raise ErrorToLog(f"当前操作晚了超过一费。疑似发生错误。请求人工接管。")
             except UserPausedError as e:
                 raise ErrorToLog("用户停止。")
