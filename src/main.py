@@ -11,8 +11,9 @@ from src.logic.action import ActionType
 from src.cache import get_map_by_code, get_map_by_name
 from src.utils.error_to_log import ErrorToLog
 from src.logic.convert_pos import convert_position
+from src.logic.auto_enter import auto_enter
 
-def main(file_path, debug):
+def main(file_path, debug, autoenter):
     # Set the logger level
     if debug:
         logger.setLevel(logging.DEBUG)
@@ -73,6 +74,10 @@ def main(file_path, debug):
         # Initialize operator location mapping and operator alias mapping
         operator_loc = {}
         operator_alias = {}
+
+        # Auto enter if needed
+        if autoenter and not excel.is_paused():
+            auto_enter()
 
         # Main loop
         while not excel.is_paused():
@@ -140,6 +145,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='PRTS+')
     parser.add_argument('--xlsm', type=str, help='The path to the Excel file.')
     parser.add_argument('--debug', action='store_true', help='Run in debug mode.')
+    parser.add_argument('--autoenter', action='store_true', help='Run in auto enter mode.')
 
     args = parser.parse_args()
-    main(args.xlsm, args.debug)
+    main(args.xlsm, args.debug, args.autoenter)
