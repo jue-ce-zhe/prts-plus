@@ -29,6 +29,7 @@ def main(file_path, debug, autoenter):
         # Wait for key press to exit
         logger.info("Press any key to exit.")
         input()
+        raise
 
     try:
         # Define the check pause closure
