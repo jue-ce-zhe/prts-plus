@@ -140,7 +140,7 @@ def main(file_path, debug, autoenter):
             excel.next_action()
     except ErrorToLog as e:
         logger.error(f"Error occurred: {e}")
-        excel.show_error(f"错误：{e}")
+        excel.show_error(f"{e}")
     except Exception as e:
         logger.error(f"Error occurred: {e}")
         excel.show_error(f"未定义错误：{e}")
