@@ -138,9 +138,9 @@ def perform_deploy(
         )
 
     # Do the rest of the deploy
-    mousemove(action.view_pos_side)
+    mousemove((action.view_pos_side[0], action.view_pos_side[1] + ratioconfig.DEPLOY_DELTA_RATIO))
     time.sleep(actionconfig.GENERAL_WAITTIME)
-    mouseup(action.view_pos_side)
+    mouseup((action.view_pos_side[0], action.view_pos_side[1] + ratioconfig.DEPLOY_DELTA_RATIO))
     time.sleep(actionconfig.GENERAL_WAITTIME)
 
     # Set the direction
