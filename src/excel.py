@@ -123,6 +123,8 @@ class Excel(metaclass=Singleton):
         if not self.is_paused():
             self.set_control_value('cur_status', '运行中')
             self.set_control_value('err_log', '')
+        else:
+            self.set_paused()
         self.current_row = int(self.get_control_value('cur_row')) - 1
     
     @connection_handler
