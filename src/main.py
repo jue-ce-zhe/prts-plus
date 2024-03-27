@@ -11,17 +11,25 @@ from src.logic.action import ActionType
 from src.cache import get_map_by_code, get_map_by_name
 from src.utils.error_to_log import ErrorToLog
 from src.logic.convert_pos import convert_position
+from src.logic.auto_enter import auto_enter
 
-def main(file_path, debug):
+def main(file_path, debug, autoenter):
     # Set the logger level
     if debug:
         logger.setLevel(logging.DEBUG)
     else:
         logger.setLevel(logging.WARNING)
-    
-    # Establish the connection to the Excel file
-    logger.info(f"Excel file path: {file_path}")
-    excel = Excel(file_path)
+
+    try:
+        # Establish the connection to the Excel file
+        logger.info(f"Excel file path: {file_path}")
+        excel = Excel(file_path)
+    except Exception as e:
+        logger.error(f"Error occurred: {e}")
+        # Wait for key press to exit
+        logger.info("Press any key to exit.")
+        input()
+        raise
 
     try:
         # Define the check pause closure
@@ -74,6 +82,10 @@ def main(file_path, debug):
         operator_loc = {}
         operator_alias = {}
 
+        # Auto enter if needed
+        if autoenter and not excel.is_paused():
+            auto_enter()
+
         # Main loop
         while not excel.is_paused():
             action = excel.get_current_action()
@@ -117,10 +129,10 @@ def main(file_path, debug):
                 excel.set_result(StatusColor.SUCCESS)
             except PerformLateError as e:
                 excel.set_result(StatusColor.WARNING)
-                if e.actual_time > e.scheduled_time + GameTime.get_tick_max():
+                if e.actual_time > e.scheduled_time + GameTime(1, 0):
                     raise ErrorToLog(f"当前操作晚了超过一费。疑似发生错误。请求人工接管。")
             except UserPausedError as e:
-                raise ErrorToLog("用户停止。")
+                raise ErrorToLog("用户停止。", False)
             except Exception as e:
                 excel.set_result(StatusColor.FAILURE)
                 raise
@@ -128,18 +140,23 @@ def main(file_path, debug):
             excel.next_action()
     except ErrorToLog as e:
         logger.error(f"Error occurred: {e}")
-        excel.show_error(f"错误：{e}")
+        excel.show_error(f"{e}")
     except Exception as e:
         logger.error(f"Error occurred: {e}")
         excel.show_error(f"未定义错误：{e}")
     finally:
         excel.set_paused()
+        if debug:
+            # Wait for key press to exit
+            logger.info("Press any key to exit.")
+            input()
 
 if __name__ == '__main__':
     # Take the only parameter as the Excel file path
     parser = argparse.ArgumentParser(description='PRTS+')
     parser.add_argument('--xlsm', type=str, help='The path to the Excel file.')
     parser.add_argument('--debug', action='store_true', help='Run in debug mode.')
+    parser.add_argument('--autoenter', action='store_true', help='Run in auto enter mode.')
 
     args = parser.parse_args()
-    main(args.xlsm, args.debug)
+    main(args.xlsm, args.debug, args.autoenter)

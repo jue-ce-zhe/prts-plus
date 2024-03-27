@@ -12,10 +12,14 @@ class GameRatioConfig:
     COST_NUMBER_AREA_RATIO = (0.33, 0, 1, 0.9) # (left, top, right, bottom)
     OPERATOR_AREA_RATIO = (0, 0.8, 1, 1) # (left, top, right, bottom)
     LAST_OPER_RATIO = (0.95, 0.9) # (x, y)
-    RETREAT_RATIO = (0.46, 0.3) # (x, y)
-    SKILL_RATIO = (0.7, 0.6) # (x, y)
+    RETREAT_RATIO = (0.4569, 0.3352) # (x, y)
+    SKILL_RATIO = (0.6412, 0.5857) # (x, y)
+    START_BUTTON_RATIO = (0.87, 0.74) # (x, y)
+    SPEED_BUTTON_RATIO = (0.86, 0.07) # (x, y)
+    PAUSE_BUTTON_RATIO = (0.94, 0.07) # (x, y)
     DIRECTION_RATIO = 0.2
     DEPLOY_DRAG_RATIO = 0.03
+    DEPLOY_DELTA_RATIO = 0.02
     OPERATOR_SELECTED_RATIO = 0.9
 
 class ImageProcessingConfig:

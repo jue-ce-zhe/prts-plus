@@ -14,7 +14,7 @@
             "editor_icon_scale": 1,
             "icon": {
                 "background_color": "00000066",
-                "description": "",
+                "description": "esc",
                 "radius_correction": 1,
                 "rel_position": {
                     "rel_x": 0.7602181620735287,
@@ -44,7 +44,7 @@
             "editor_icon_scale": 1,
             "icon": {
                 "background_color": "00000066",
-                "description": "",
+                "description": "暂停",
                 "radius_correction": 1,
                 "rel_position": {
                     "rel_x": 0.9379166666666667,
