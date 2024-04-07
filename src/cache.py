@@ -65,8 +65,14 @@ def load_resource(
         raise ValueError(
             f"No resource found for name: {resource_name}, please check if the name is valid"
         )
+    # Tackles two cases: single string or list of strings
     resource_filename = resource_mapping[resource_name]
-    filepaths = glob.glob(f"{resource_path}/*{resource_filename}*")
+    if isinstance(resource_filename, str):
+        resource_filename = [resource_filename]
+
+    filepaths = []
+    for filename in resource_filename:
+        filepaths.extend(glob.glob(f"{resource_path}/*{filename}*"))
     if not filepaths:
         logger.error(f"No resource found for name: {resource_name}")
         raise FileNotFoundError(f"No resource found for name: {resource_name}")
