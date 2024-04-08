@@ -280,10 +280,10 @@ def perform_action(action: Action, user_paused: Callable[[], bool]) -> None:
         logger.info(f"Performed action: {action}")
     elif actual_time > action.get_game_time():
         logger.warning(f"Performed action: {action} (not on time)")
-        raise PerformLateError(get_game_time(), action.get_game_time())
+        raise PerformLateError(actual_time, action.get_game_time())
     else:
         logger.error(f"Performed action: {action} (unexpected time)")
-        raise PerformLateError(get_game_time(), action.get_game_time())
+        raise PerformLateError(actual_time, action.get_game_time())
 
 
 if __name__ == "__main__":
