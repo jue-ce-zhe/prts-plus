@@ -817,6 +817,15 @@
     "导火索": [
         "char_4126_fuze"
     ],
+    "露托": [
+        "char_4130_luton"
+    ],
+    "奥达": [
+        "char_4131_odda"
+    ],
+    "阿斯卡纶": [
+        "char_4132_ascln"
+    ],
     "燧石": [
         "char_415_flint"
     ],
@@ -859,6 +868,9 @@
     ],
     "松果": [
         "char_440_pinecn"
+    ],
+    "阿罗玛": [
+        "char_446_aroma"
     ],
     "蜜莓": [
         "char_449_glider"
@@ -1588,6 +1600,12 @@
     "天桩": [
         "trap_146_dhdcr"
     ],
+    "巫术弩炮": [
+        "trap_147_spblls"
+    ],
+    "幽影门扉": [
+        "trap_148_amblls"
+    ],
     "便携式种植槽": [
         "trap_400_xbfarm"
     ],
@@ -1902,5 +1920,29 @@
     ],
     "蜜酿万岁！": [
         "trap_745_beer"
+    ],
+    "尖端研究成果共享终端": [
+        "trap_746_cdrhine",
+        "trap_747_cdrhinea",
+        "trap_748_cdrhineb"
+    ],
+    "声波记录扩音器": [
+        "trap_749_cd1punch",
+        "trap_750_cd1puncha",
+        "trap_751_cd1punchb"
+    ],
+    "法术调和能量场": [
+        "trap_752_cdcaster",
+        "trap_753_cdcastera",
+        "trap_754_cdcasterb"
+    ],
+    "啸叫音响": [
+        "trap_755_cdsoul"
+    ],
+    "“黏黏的赠品”": [
+        "trap_756_cdnest"
+    ],
+    "黏黏的赠品": [
+        "trap_756_cdnest"
     ]
 }
