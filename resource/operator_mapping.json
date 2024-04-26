@@ -1826,6 +1826,24 @@
     "告示牌": [
         "trap_479_xbbillb"
     ],
+    "源石虫引诱器": [
+        "trap_482_xbblure"
+    ],
+    "“源石虫之心”": [
+        "trap_483_xbtrophy"
+    ],
+    "源石虫之心": [
+        "trap_483_xbtrophy"
+    ],
+    "检查点": [
+        "trap_484_xbcp"
+    ],
+    "随机道具盒": [
+        "trap_485_xbrandprop"
+    ],
+    "加速块": [
+        "trap_486_xbspd"
+    ],
     "阿戈尔示波器": [
         "trap_700_cdabyss",
         "trap_701_cdabyssa",
