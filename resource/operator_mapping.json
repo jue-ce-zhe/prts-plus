@@ -77,6 +77,12 @@
     "涤火杰西卡": [
         "char_1034_jesca2"
     ],
+    "维什戴尔": [
+        "char_1035_wisdel"
+    ],
+    "历阵锐枪芬": [
+        "char_1036_fang2"
+    ],
     "能天使": [
         "char_103_angel"
     ],
@@ -826,6 +832,15 @@
     "阿斯卡纶": [
         "char_4132_ascln"
     ],
+    "逻各斯": [
+        "char_4133_logos"
+    ],
+    "魔王": [
+        "char_4134_cetsyr"
+    ],
+    "PhonoR-0": [
+        "char_4136_phonor"
+    ],
     "燧石": [
         "char_415_flint"
     ],
@@ -1149,6 +1164,9 @@
     ],
     "沙地兽": [
         "token_10034_ray_sndbst"
+    ],
+    "魂灵之影": [
+        "token_10035_wisdel_wward"
     ],
     "障碍物": [
         "trap_001_crate",
@@ -1605,6 +1623,24 @@
     ],
     "幽影门扉": [
         "trap_148_amblls"
+    ],
+    "查尔斯·林奇": [
+        "trap_158_lrsteam"
+    ],
+    "核心增幅器": [
+        "trap_159_lrcore"
+    ],
+    "洪流束激发器": [
+        "trap_160_lrlgun"
+    ],
+    "枯朽祭坛": [
+        "trap_161_lrcage"
+    ],
+    "十四章机制控制器": [
+        "trap_162_lrctrl"
+    ],
+    "振奋荣光": [
+        "trap_164_lrsiege"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
