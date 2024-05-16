@@ -1624,6 +1624,15 @@
     "幽影门扉": [
         "trap_148_amblls"
     ],
+    "折叠式堡垒模块": [
+        "trap_151_muruinw"
+    ],
+    "折叠式辅助器械": [
+        "trap_152_muruino"
+    ],
+    "阵地屏障": [
+        "trap_154_mugtps"
+    ],
     "查尔斯·林奇": [
         "trap_158_lrsteam"
     ],
@@ -1641,6 +1650,21 @@
     ],
     "振奋荣光": [
         "trap_164_lrsiege"
+    ],
+    "足球": [
+        "trap_165_muftbl"
+    ],
+    "折叠设施维护员": [
+        "trap_166_muwork"
+    ],
+    "折叠式维护车": [
+        "trap_167_muruinf"
+    ],
+    "折叠式后勤站": [
+        "trap_169_muruinb"
+    ],
+    "促融共竞控制": [
+        "trap_179_muctrl"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
