@@ -739,6 +739,9 @@
     "截云": [
         "char_4078_bdhkgt"
     ],
+    "海霓": [
+        "char_4079_haini"
+    ],
     "林": [
         "char_4080_lin"
     ],
@@ -840,6 +843,12 @@
     ],
     "PhonoR-0": [
         "char_4136_phonor"
+    ],
+    "深巡": [
+        "char_4137_udflow"
+    ],
+    "乌尔比安": [
+        "char_4145_ulpia"
     ],
     "燧石": [
         "char_415_flint"
@@ -1168,6 +1177,9 @@
     "魂灵之影": [
         "token_10035_wisdel_wward"
     ],
+    "从不混淆的方向": [
+        "token_10039_ulpia_block"
+    ],
     "障碍物": [
         "trap_001_crate",
         "trap_163_foolcrate"
@@ -1328,7 +1340,8 @@
         "trap_054_dancdol"
     ],
     "封印的地面": [
-        "trap_055_tileblock"
+        "trap_055_tileblock",
+        "trap_180_dsblock"
     ],
     "丹田": [
         "trap_056_sfsuifire"
@@ -1632,6 +1645,15 @@
     ],
     "阵地屏障": [
         "trap_154_mugtps"
+    ],
+    "航道信标": [
+        "trap_155_aegiret"
+    ],
+    "赘生甲壳": [
+        "trap_156_dsshell"
+    ],
+    "小帮手": [
+        "trap_157_bounc2"
     ],
     "查尔斯·林奇": [
         "trap_158_lrsteam"
