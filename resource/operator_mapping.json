@@ -853,6 +853,12 @@
     "乌尔比安": [
         "char_4145_ulpia"
     ],
+    "妮芙": [
+        "char_4146_nymph"
+    ],
+    "渡桥": [
+        "char_4147_mitm"
+    ],
     "燧石": [
         "char_415_flint"
     ],
@@ -1179,6 +1185,9 @@
     ],
     "魂灵之影": [
         "token_10035_wisdel_wward"
+    ],
+    "樱桃三号": [
+        "token_10037_mitm_trshrb"
     ],
     "从不混淆的方向": [
         "token_10039_ulpia_block"
