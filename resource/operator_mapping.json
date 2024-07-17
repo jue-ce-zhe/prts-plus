@@ -859,6 +859,9 @@
     "渡桥": [
         "char_4147_mitm"
     ],
+    "锡人": [
+        "char_4151_tinman"
+    ],
     "燧石": [
         "char_415_flint"
     ],
@@ -1393,7 +1396,8 @@
     ],
     "宝箱": [
         "trap_065_normbox",
-        "trap_108_smbox"
+        "trap_108_smbox",
+        "trap_757_skzbox"
     ],
     "尖刺宝箱": [
         "trap_066_rarebox",
@@ -2056,5 +2060,30 @@
     ],
     "黏黏的赠品": [
         "trap_756_cdnest"
+    ],
+    "停滞巧械": [
+        "trap_758_skzmbx"
+    ],
+    "垂死羽兽": [
+        "trap_759_skzwyx"
+    ],
+    "年代之刺": [
+        "trap_760_skztzs"
+    ],
+    "尊主的残影": [
+        "trap_761_skzthx"
+    ],
+    "特蕾西娅，黑冠圣贤": [
+        "trap_762_skztxy"
+    ],
+    "圣卫坚盾": [
+        "trap_763_skzddd"
+    ],
+    "驮兽旅行家": [
+        "trap_764_skzshp"
+    ],
+    "狭路相逢": [
+        "trap_766_duelwal",
+        "trap_767_duelcdt"
     ]
 }
