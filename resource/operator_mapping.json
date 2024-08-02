@@ -709,6 +709,10 @@
     "鸿雪": [
         "char_4055_bgsnow"
     ],
+    "佩佩": [
+        "char_4058_pepe",
+        "trap_471_tegmaus"
+    ],
     "苦艾": [
         "char_405_absin"
     ],
@@ -849,6 +853,15 @@
     ],
     "深巡": [
         "char_4137_udflow"
+    ],
+    "娜仁图亚": [
+        "char_4138_narant"
+    ],
+    "莎草": [
+        "char_4139_papyrs"
+    ],
+    "衡沙": [
+        "char_4140_lasher"
     ],
     "乌尔比安": [
         "char_4145_ulpia"
@@ -1188,6 +1201,9 @@
     ],
     "魂灵之影": [
         "token_10035_wisdel_wward"
+    ],
+    "发条羽兽": [
+        "token_10036_lasher_mcbird"
     ],
     "樱桃三号": [
         "token_10037_mitm_trshrb"
@@ -1704,6 +1720,12 @@
     "促融共竞控制": [
         "trap_179_muctrl"
     ],
+    "结晶消除桩": [
+        "trap_181_sgray"
+    ],
+    "纯净结晶": [
+        "trap_182_sglink"
+    ],
     "便携式种植槽": [
         "trap_400_xbfarm"
     ],
@@ -1902,9 +1924,6 @@
     ],
     "大祭司": [
         "trap_468_tpriest"
-    ],
-    "佩佩": [
-        "trap_471_tegmaus"
     ],
     "罗德岛工作人员": [
         "trap_473_trmedic"
