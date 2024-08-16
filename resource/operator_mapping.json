@@ -1726,6 +1726,9 @@
     "纯净结晶": [
         "trap_182_sglink"
     ],
+    "作战专用掩体": [
+        "trap_183_sheltk"
+    ],
     "便携式种植槽": [
         "trap_400_xbfarm"
     ],
@@ -2101,8 +2104,38 @@
     "驮兽旅行家": [
         "trap_764_skzshp"
     ],
+    "无可置疑的罪证": [
+        "trap_765_bmoney"
+    ],
     "狭路相逢": [
         "trap_766_duelwal",
         "trap_767_duelcdt"
+    ],
+    "保全人才合作协议": [
+        "trap_768_godch"
+    ],
+    "加急许可条款": [
+        "trap_769_godcha"
+    ],
+    "临时任命条款": [
+        "trap_770_godchb"
+    ],
+    "皇家科学院望远镜": [
+        "trap_771_bqrnge"
+    ],
+    "专业显示模块": [
+        "trap_772_bqrngea"
+    ],
+    "灵活架设模块": [
+        "trap_773_bqrngeb"
+    ],
+    "攀云机": [
+        "trap_774_bqmlee"
+    ],
+    "加固扩存改装": [
+        "trap_775_bqmleea"
+    ],
+    "长距增运改装": [
+        "trap_776_bqmleeb"
     ]
 }
