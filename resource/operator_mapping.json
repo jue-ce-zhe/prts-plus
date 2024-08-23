@@ -1964,6 +1964,84 @@
     "加速块": [
         "trap_486_xbspd"
     ],
+    "大型兽栏": [
+        "trap_487_xblfen"
+    ],
+    "全自动切木站": [
+        "trap_488_xbtwod"
+    ],
+    "全自动掘石站": [
+        "trap_489_xbtrok"
+    ],
+    "全自动采铁站": [
+        "trap_490_xbtiro"
+    ],
+    "虚影壁障": [
+        "trap_491_xbtwal"
+    ],
+    "狩闻匣": [
+        "trap_492_xbamai"
+    ],
+    "追猎发射台": [
+        "trap_493_xbabal"
+    ],
+    "拟南盏": [
+        "trap_494_xbasky"
+    ],
+    "草香粉": [
+        "trap_495_xbasmi"
+    ],
+    "稀有·草香粉": [
+        "trap_496_xbaasm"
+    ],
+    "岩锤": [
+        "trap_497_xbarok"
+    ],
+    "稀有·岩锤": [
+        "trap_498_xbaaro"
+    ],
+    "稀有·拟南盏": [
+        "trap_499_xbaask"
+    ],
+    "荧光棒弹射装置": [
+        "trap_500_xbaflu"
+    ],
+    "外骨骼": [
+        "trap_501_xbaarm"
+    ],
+    "冰瀑喷射罐": [
+        "trap_502_xbaice"
+    ],
+    "凋亡发射器": [
+        "trap_503_xbabla"
+    ],
+    "桶装液香": [
+        "trap_504_xbaess"
+    ],
+    "庇护制造器": [
+        "trap_505_xbawea"
+    ],
+    "驯兽口粮": [
+        "trap_506_xbadiv"
+    ],
+    "感知链接器": [
+        "trap_507_xbabut"
+    ],
+    "行动套装": [
+        "trap_508_xbabat"
+    ],
+    "木材采集站·采购": [
+        "trap_509_xbf1g"
+    ],
+    "石材采集站·采购": [
+        "trap_510_xbf2g"
+    ],
+    "铁矿采集站·采购": [
+        "trap_511_xbf3g"
+    ],
+    "蟹蟹抽水泵·采购": [
+        "trap_512_xbwfg"
+    ],
     "阿戈尔示波器": [
         "trap_700_cdabyss",
         "trap_701_cdabyssa",
