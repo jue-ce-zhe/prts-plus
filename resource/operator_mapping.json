@@ -863,6 +863,18 @@
     "衡沙": [
         "char_4140_lasher"
     ],
+    "玛露西尔": [
+        "char_4141_marcil"
+    ],
+    "莱欧斯": [
+        "char_4142_laios"
+    ],
+    "森西": [
+        "char_4143_sensi"
+    ],
+    "齐尔查克": [
+        "char_4144_chilc"
+    ],
     "乌尔比安": [
         "char_4145_ulpia"
     ],
@@ -1413,6 +1425,7 @@
     "宝箱": [
         "trap_065_normbox",
         "trap_108_smbox",
+        "trap_172_trbox",
         "trap_757_skzbox"
     ],
     "尖刺宝箱": [
@@ -1716,6 +1729,33 @@
     ],
     "折叠式后勤站": [
         "trap_169_muruinb"
+    ],
+    "很大的锅": [
+        "trap_171_trpot"
+    ],
+    "“宝箱”": [
+        "trap_172_trbox"
+    ],
+    "闪亮果实": [
+        "trap_173_slfrut"
+    ],
+    "奇异黑光果实": [
+        "trap_174_smfrut"
+    ],
+    "香甜烤果子": [
+        "trap_175_frfrut"
+    ],
+    "缤纷果酒": [
+        "trap_176_frutwn"
+    ],
+    "宝箱的肉？": [
+        "trap_177_tentcl"
+    ],
+    "\"宝箱“": [
+        "trap_178_trrbox"
+    ],
+    "\"宝箱": [
+        "trap_178_trrbox"
     ],
     "促融共竞控制": [
         "trap_179_muctrl"
