@@ -1426,6 +1426,7 @@
         "trap_065_normbox",
         "trap_108_smbox",
         "trap_172_trbox",
+        "trap_178_trrbox",
         "trap_757_skzbox"
     ],
     "尖刺宝箱": [
@@ -1734,7 +1735,8 @@
         "trap_171_trpot"
     ],
     "“宝箱”": [
-        "trap_172_trbox"
+        "trap_172_trbox",
+        "trap_178_trrbox"
     ],
     "闪亮果实": [
         "trap_173_slfrut"
@@ -1750,12 +1752,6 @@
     ],
     "宝箱的肉？": [
         "trap_177_tentcl"
-    ],
-    "\"宝箱“": [
-        "trap_178_trrbox"
-    ],
-    "\"宝箱": [
-        "trap_178_trrbox"
     ],
     "促融共竞控制": [
         "trap_179_muctrl"
