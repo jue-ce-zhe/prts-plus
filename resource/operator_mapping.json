@@ -32,6 +32,9 @@
     "纯烬艾雅法拉": [
         "char_1016_agoat2"
     ],
+    "维娜·维多利亚": [
+        "char_1019_siege2"
+    ],
     "空": [
         "char_101_sora"
     ],
@@ -890,6 +893,9 @@
     "燧石": [
         "char_415_flint"
     ],
+    "凯瑟琳": [
+        "char_4162_cathy"
+    ],
     "森蚺": [
         "char_416_zumama",
         "trap_466_tzumama"
@@ -996,6 +1002,9 @@
     ],
     "龙舌兰": [
         "char_486_takila"
+    ],
+    "波卜": [
+        "char_487_bobb"
     ],
     "青枳": [
         "char_488_buildr"
@@ -1222,6 +1231,12 @@
     ],
     "从不混淆的方向": [
         "token_10039_ulpia_block"
+    ],
+    "黄金盟誓": [
+        "token_10040_siege2_vlion"
+    ],
+    "爬行号·防护单元": [
+        "token_10041_cathy_catsld"
     ],
     "障碍物": [
         "trap_001_crate",
@@ -1764,6 +1779,12 @@
     ],
     "作战专用掩体": [
         "trap_183_sheltk"
+    ],
+    "军工厂指令平台": [
+        "trap_184_vtarsn"
+    ],
+    "黄金回响": [
+        "trap_185_vtlntw"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
