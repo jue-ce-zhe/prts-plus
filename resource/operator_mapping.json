@@ -89,6 +89,9 @@
     "阿米娅-MEDIC": [
         "char_1037_amiya3"
     ],
+    "荒芜拉普兰德": [
+        "char_1038_whitw2"
+    ],
     "能天使": [
         "char_103_angel"
     ],
@@ -193,6 +196,9 @@
     ],
     "清道夫": [
         "char_149_scave"
+    ],
+    "弑君者": [
+        "char_1502_crosly"
     ],
     "蛇屠箱": [
         "char_150_snakek"
@@ -666,6 +672,9 @@
         "char_4025_aprot2",
         "char_512_aprot"
     ],
+    "忍冬": [
+        "char_4026_vulpis"
+    ],
     "霍尔海雅": [
         "char_4027_heyak"
     ],
@@ -887,14 +896,23 @@
     "渡桥": [
         "char_4147_mitm"
     ],
+    "菲莱": [
+        "char_4148_philae"
+    ],
     "锡人": [
         "char_4151_tinman"
+    ],
+    "裁度": [
+        "char_4155_talr"
     ],
     "燧石": [
         "char_415_flint"
     ],
     "凯瑟琳": [
         "char_4162_cathy"
+    ],
+    "云迹": [
+        "char_4165_ctrail"
     ],
     "森蚺": [
         "char_416_zumama",
@@ -1785,6 +1803,9 @@
     ],
     "黄金回响": [
         "trap_185_vtlntw"
+    ],
+    "烟花发射器": [
+        "trap_186_cnvfwks"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
