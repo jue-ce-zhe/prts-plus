@@ -1070,31 +1070,63 @@
         "char_504_rguard"
     ],
     "预备干员-术师": [
-        "char_505_rcast"
+        "char_505_rcast",
+        "char_604_ccast"
     ],
     "预备干员-后勤": [
         "char_506_rmedic"
     ],
     "预备干员-狙击": [
-        "char_507_rsnipe"
+        "char_507_rsnipe",
+        "char_603_csnipe"
     ],
     "Sharp": [
-        "char_508_aguard"
+        "char_508_aguard",
+        "char_609_acguad"
     ],
     "Pith": [
-        "char_509_acast"
+        "char_509_acast",
+        "char_612_accast"
     ],
     "Touch": [
-        "char_510_amedic"
+        "char_510_amedic",
+        "char_613_acmedc"
     ],
     "Stormeye": [
-        "char_511_asnipe"
+        "char_511_asnipe",
+        "char_611_acnipe"
     ],
     "郁金香": [
-        "char_513_apionr"
+        "char_513_apionr",
+        "char_608_acpion"
     ],
     "预备干员-重装": [
-        "char_514_rdfend"
+        "char_514_rdfend",
+        "char_602_cdfend"
+    ],
+    "预备干员-先锋": [
+        "char_600_cpione"
+    ],
+    "预备干员-近卫": [
+        "char_601_cguard"
+    ],
+    "预备干员-医疗": [
+        "char_605_cmedic"
+    ],
+    "预备干员-辅助": [
+        "char_606_csuppo"
+    ],
+    "预备干员-特种": [
+        "char_607_cspec"
+    ],
+    "Mechanist": [
+        "char_610_acfend"
+    ],
+    "Raidian": [
+        "char_614_acsupo"
+    ],
+    "Misery": [
+        "char_615_acspec"
     ],
     "医疗探机": [
         "token_10000_silent_healrb"
@@ -1568,15 +1600,135 @@
     "眩光手雷": [
         "trap_099_mhflsb"
     ],
+    "小盾": [
+        "trap_1000_acarm000"
+    ],
+    "短剑": [
+        "trap_1001_acarm001"
+    ],
+    "幸运币": [
+        "trap_1002_acarm002"
+    ],
+    "冰块": [
+        "trap_1003_acarm003"
+    ],
+    "压缩饼干": [
+        "trap_1004_acarm004"
+    ],
+    "信标": [
+        "trap_1005_acarm005"
+    ],
+    "源岩匕首": [
+        "trap_1006_acarm006"
+    ],
+    "源石溶剂": [
+        "trap_1007_acarm007"
+    ],
+    "激光发射器": [
+        "trap_1008_acarm008"
+    ],
+    "喀兰贸易文档": [
+        "trap_1009_acarm009"
+    ],
     "高能源石爆桶": [
         "trap_100_mhlbmb"
+    ],
+    "卡西米尔文档": [
+        "trap_1010_acarm010"
+    ],
+    "深海猎人文档": [
+        "trap_1011_acarm011"
+    ],
+    "浓茶": [
+        "trap_1012_acarm012"
+    ],
+    "蜂鸣器": [
+        "trap_1013_acarm013"
+    ],
+    "精打细算玩偶": [
+        "trap_1014_acarm014"
+    ],
+    "见钱眼开玩偶": [
+        "trap_1015_acarm015"
+    ],
+    "预备进阶许可": [
+        "trap_1016_acarm016"
+    ],
+    "战场分析仪": [
+        "trap_1017_acarm017"
+    ],
+    "震撼弹": [
+        "trap_1018_acarm018"
+    ],
+    "制式重装盾": [
+        "trap_1019_acarm019"
     ],
     "高压脉冲诡雷": [
         "trap_101_mhshok"
     ],
+    "制式狙击镜": [
+        "trap_1020_acarm020"
+    ],
+    "制式术师杖": [
+        "trap_1021_acarm021"
+    ],
+    "口袋法阵": [
+        "trap_1022_acarm022"
+    ],
+    "竞技投币机": [
+        "trap_1023_acarm023"
+    ],
+    "工匠锤": [
+        "trap_1024_acarm024"
+    ],
+    "休眠子裔": [
+        "trap_1025_acarm025"
+    ],
+    "术师无人机": [
+        "trap_1026_acarm026"
+    ],
+    "卡西米尔模型": [
+        "trap_1027_acarm027"
+    ],
+    "喀兰贸易模型": [
+        "trap_1028_acarm028"
+    ],
+    "深海猎人模型": [
+        "trap_1029_acarm029"
+    ],
     "滞空牵引无人机": [
         "trap_102_mhwrbg",
         "trap_105_mhwrct"
+    ],
+    "精英重装套组": [
+        "trap_1030_acarm030"
+    ],
+    "精英狙击套组": [
+        "trap_1031_acarm031"
+    ],
+    "精英术师套组": [
+        "trap_1032_acarm032"
+    ],
+    "歌利亚头盔": [
+        "trap_1033_acarm033"
+    ],
+    "M3护甲": [
+        "trap_1034_acarm034"
+    ],
+    "M3利爪": [
+        "trap_1035_acarm035"
+    ],
+    "便携弹射器": [
+        "trap_1036_acarm036"
+    ],
+    "有限加速器": [
+        "trap_1037_acarm037"
+    ],
+    "全能机械臂": [
+        "trap_1038_acarm038"
+    ],
+    "博士投影": [
+        "trap_1039_acarm039"
     ],
     "地形增伤控制": [
         "trap_103_ymdgct"
@@ -1589,6 +1741,69 @@
     ],
     "空间稳定设施": [
         "trap_107_smpow"
+    ],
+    "法术：恢复": [
+        "trap_1080_acspell001"
+    ],
+    "法术：力量": [
+        "trap_1081_acspell002"
+    ],
+    "法术：传动": [
+        "trap_1082_acspell003"
+    ],
+    "法术：贪婪": [
+        "trap_1083_acspell004"
+    ],
+    "法术：满足": [
+        "trap_1084_acspell005"
+    ],
+    "法术：护盾": [
+        "trap_1085_acspell006"
+    ],
+    "法术：榜样": [
+        "trap_1086_acspell007"
+    ],
+    "法术：屏障": [
+        "trap_1087_acspell008"
+    ],
+    "法术：熟人": [
+        "trap_1088_acspell009"
+    ],
+    "法术：同行": [
+        "trap_1089_acspell010"
+    ],
+    "法术：提升": [
+        "trap_1090_acspell011"
+    ],
+    "法术：迟缓": [
+        "trap_1091_acspell012"
+    ],
+    "法术：全力": [
+        "trap_1093_acspell014"
+    ],
+    "法术：血税": [
+        "trap_1094_acspell015"
+    ],
+    "法术：破袭": [
+        "trap_1095_acspell016"
+    ],
+    "驳船操作员": [
+        "trap_1096_acshopup"
+    ],
+    "补给调配器": [
+        "trap_1097_acshopre"
+    ],
+    "补给留存器": [
+        "trap_1098_acshopfr"
+    ],
+    "晋升调配特许": [
+        "trap_1099_acspell017"
+    ],
+    "敌人入口": [
+        "trap_1100_acreddoor"
+    ],
+    "补给驳船": [
+        "trap_1101_acplane"
     ],
     "巨壳藤蔓": [
         "trap_110_smbbox"
