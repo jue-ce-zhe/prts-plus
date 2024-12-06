@@ -92,6 +92,9 @@
     "荒芜拉普兰德": [
         "char_1038_whitw2"
     ],
+    "引星棘刺": [
+        "char_1039_thorn2"
+    ],
     "能天使": [
         "char_103_angel"
     ],
@@ -911,6 +914,12 @@
     "凯瑟琳": [
         "char_4162_cathy"
     ],
+    "瑰盐": [
+        "char_4163_rosesa"
+    ],
+    "特克诺": [
+        "char_4164_tecno"
+    ],
     "云迹": [
         "char_4165_ctrail"
     ],
@@ -1288,6 +1297,9 @@
     "爬行号·防护单元": [
         "token_10041_cathy_catsld"
     ],
+    "木偶舞者": [
+        "token_10042_tecno_puppet"
+    ],
     "障碍物": [
         "trap_001_crate",
         "trap_163_foolcrate"
@@ -1326,7 +1338,8 @@
         "trap_013_blower"
     ],
     "L-44\"留声机\"": [
-        "trap_014_tower"
+        "trap_014_tower",
+        "trap_778_giatow"
     ],
     "巨蕈": [
         "trap_015_tree"
@@ -2022,6 +2035,9 @@
     "烟花发射器": [
         "trap_186_cnvfwks"
     ],
+    "盐坨子炮": [
+        "trap_196_cnnon"
+    ],
     "便携式种植槽": [
         "trap_400_xbfarm"
     ],
@@ -2508,6 +2524,12 @@
     ],
     "长距增运改装": [
         "trap_776_bqmleeb"
+    ],
+    "“留声机”底座": [
+        "trap_777_giacan"
+    ],
+    "留声机底座": [
+        "trap_777_giacan"
     ],
     "尼卢火": [
         "trap_779_skzth"
