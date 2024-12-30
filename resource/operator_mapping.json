@@ -2035,8 +2035,38 @@
     "烟花发射器": [
         "trap_186_cnvfwks"
     ],
+    "扭蛋机": [
+        "trap_187_arcgacha"
+    ],
+    "街边电话亭": [
+        "trap_188_arcsum1"
+    ],
+    "军营电话亭": [
+        "trap_189_arcsum2"
+    ],
+    "超时空电话亭": [
+        "trap_190_arcsum3"
+    ],
+    "菜单电话机": [
+        "trap_191_arcexpd"
+    ],
+    "勾爪": [
+        "trap_192_archook"
+    ],
+    "大战记分站": [
+        "trap_193_arctoll"
+    ],
+    "口渴乐乐": [
+        "trap_194_arcsoda"
+    ],
+    "大力拳套": [
+        "trap_195_arcpw"
+    ],
     "盐坨子炮": [
         "trap_196_cnnon"
+    ],
+    "两栖码头": [
+        "trap_210_arcgrg"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
