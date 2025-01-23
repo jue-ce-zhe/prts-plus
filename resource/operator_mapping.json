@@ -98,6 +98,9 @@
     "能天使": [
         "char_103_angel"
     ],
+    "烛煌": [
+        "char_1040_blaze2"
+    ],
     "芙兰卡": [
         "char_106_franka"
     ],
@@ -317,6 +320,9 @@
     ],
     "黍": [
         "char_2025_shu"
+    ],
+    "余": [
+        "char_2026_yu"
     ],
     "塞雷娅": [
         "char_202_demkni"
@@ -718,6 +724,9 @@
     "多萝西": [
         "char_4048_doroth"
     ],
+    "寻澜": [
+        "char_4052_surfer"
+    ],
     "至简": [
         "char_4054_malist"
     ],
@@ -926,6 +935,9 @@
     "森蚺": [
         "char_416_zumama",
         "trap_466_tzumama"
+    ],
+    "行箸": [
+        "char_4172_xingzh"
     ],
     "焰尾": [
         "char_420_flamtl"
@@ -2067,6 +2079,12 @@
     ],
     "两栖码头": [
         "trap_210_arcgrg"
+    ],
+    "火灶": [
+        "trap_211_cjgtow"
+    ],
+    "废弃火灶": [
+        "trap_212_cjbtow"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
