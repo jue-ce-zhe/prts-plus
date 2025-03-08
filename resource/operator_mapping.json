@@ -939,11 +939,17 @@
         "char_416_zumama",
         "trap_466_tzumama"
     ],
+    "钼铅": [
+        "char_4171_wulfen"
+    ],
     "行箸": [
         "char_4172_xingzh"
     ],
     "诺威尔": [
         "char_4173_nowell"
+    ],
+    "水灯心": [
+        "char_4177_brigid"
     ],
     "焰尾": [
         "char_420_flamtl"
@@ -986,6 +992,9 @@
     ],
     "蜜莓": [
         "char_449_glider"
+    ],
+    "死芒": [
+        "char_450_necras"
     ],
     "罗宾": [
         "char_451_robin"
@@ -1317,6 +1326,15 @@
     ],
     "木偶舞者": [
         "token_10042_tecno_puppet"
+    ],
+    "悲叹的仆役": [
+        "token_10043_necras_skeltn"
+    ],
+    "矿石“杀手”": [
+        "token_10044_wulfen_mine"
+    ],
+    "矿石杀手": [
+        "token_10044_wulfen_mine"
     ],
     "障碍物": [
         "trap_001_crate",
@@ -2001,7 +2019,7 @@
     "足球": [
         "trap_165_muftbl"
     ],
-    "折叠设施维护员": [
+    "设施建筑工": [
         "trap_166_muwork"
     ],
     "折叠式维护车": [
@@ -2091,6 +2109,18 @@
     ],
     "废弃火灶": [
         "trap_212_cjbtow"
+    ],
+    "树丛": [
+        "trap_218_fttree"
+    ],
+    "盾与墙": [
+        "trap_219_fttreant"
+    ],
+    "旧日之火": [
+        "trap_220_ftbone"
+    ],
+    "空壳": [
+        "trap_221_ftshad"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
