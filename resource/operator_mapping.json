@@ -951,6 +951,13 @@
     "水灯心": [
         "char_4177_brigid"
     ],
+    "阿兰娜": [
+        "char_4178_alanna"
+    ],
+    "Mon3tr": [
+        "char_4179_monstr",
+        "token_10002_kalts_mon3tr"
+    ],
     "焰尾": [
         "char_420_flamtl"
     ],
@@ -986,6 +993,9 @@
     ],
     "松果": [
         "char_440_pinecn"
+    ],
+    "骋风": [
+        "char_445_wscoot"
     ],
     "阿罗玛": [
         "char_446_aroma"
@@ -1170,9 +1180,6 @@
     "触手": [
         "token_10001_deepcl_tentac"
     ],
-    "Mon3tr": [
-        "token_10002_kalts_mon3tr"
-    ],
     "幻影": [
         "token_10003_cgbird_bird"
     ],
@@ -1335,6 +1342,12 @@
     ],
     "矿石杀手": [
         "token_10044_wulfen_mine"
+    ],
+    "小螺帽": [
+        "token_10045_alanna_crane"
+    ],
+    "重构体": [
+        "token_10050_monstr_prosts"
     ],
     "障碍物": [
         "trap_001_crate",
@@ -2157,6 +2170,36 @@
     ],
     "空壳": [
         "trap_221_ftshad"
+    ],
+    "弱化节点": [
+        "trap_227_mpweak"
+    ],
+    "特雷西斯": [
+        "trap_228_mptxs"
+    ],
+    "冰镇饮料机": [
+        "trap_229_mpcata"
+    ],
+    "加热饮料机": [
+        "trap_230_mpcatab"
+    ],
+    "“寒灾回响”": [
+        "trap_231_mpgrou"
+    ],
+    "寒灾回响": [
+        "trap_231_mpgrou"
+    ],
+    "“风雪中的影子”": [
+        "trap_232_mpgroub"
+    ],
+    "风雪中的影子": [
+        "trap_232_mpgroub"
+    ],
+    "稳定态萨卡兹术师结晶": [
+        "trap_233_mpmage"
+    ],
+    "活性态萨卡兹术师结晶": [
+        "trap_234_mpmageb"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
