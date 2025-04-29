@@ -1366,7 +1366,8 @@
         "trap_006_antidr"
     ],
     "弩炮": [
-        "trap_007_ballis"
+        "trap_007_ballis",
+        "trap_214_dqballis"
     ],
     "指挥终端": [
         "trap_008_farm"
@@ -1378,7 +1379,8 @@
         "trap_010_frosts"
     ],
     "源石祭坛": [
-        "trap_011_ore"
+        "trap_011_ore",
+        "trap_213_dqore"
     ],
     "干扰地雷": [
         "trap_012_mine"
