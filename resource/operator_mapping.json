@@ -101,6 +101,9 @@
     "烛煌": [
         "char_1040_blaze2"
     ],
+    "新约能天使": [
+        "char_1041_angel2"
+    ],
     "芙兰卡": [
         "char_106_franka"
     ],
@@ -958,6 +961,18 @@
         "char_4179_monstr",
         "token_10002_kalts_mon3tr"
     ],
+    "聆音": [
+        "char_4187_graceb"
+    ],
+    "CONFESS-47": [
+        "char_4188_confes"
+    ],
+    "蕾缪安": [
+        "char_4193_lemuen"
+    ],
+    "信仰搅拌机": [
+        "char_4194_rmixer"
+    ],
     "焰尾": [
         "char_420_flamtl"
     ],
@@ -1349,6 +1364,9 @@
     "重构体": [
         "token_10050_monstr_prosts"
     ],
+    "投递坐标": [
+        "token_10056_angel2_target"
+    ],
     "障碍物": [
         "trap_001_crate",
         "trap_163_foolcrate"
@@ -1402,7 +1420,8 @@
         "trap_018_bomb"
     ],
     "梅什科线圈": [
-        "trap_019_electric"
+        "trap_019_electric",
+        "trap_216_dqelec"
     ],
     "道路障碍物": [
         "trap_020_roadblock",
@@ -1876,7 +1895,8 @@
         "trap_111_wdfarm"
     ],
     "解雇者清债程序": [
-        "trap_112_crsbow"
+        "trap_112_crsbow",
+        "trap_215_dqcrsbow"
     ],
     "全自动划账器": [
         "trap_113_snflwr"
@@ -2202,6 +2222,18 @@
     ],
     "活性态萨卡兹术师结晶": [
         "trap_234_mpmageb"
+    ],
+    "圣徒像扮演者": [
+        "trap_235_hlnpcm"
+    ],
+    "圣堂射手扮演者": [
+        "trap_236_hlnpcs"
+    ],
+    "圣堂保育员扮演者": [
+        "trap_237_hlnpcb"
+    ],
+    "寻根圣事": [
+        "trap_250_hlctrl"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
