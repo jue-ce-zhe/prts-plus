@@ -104,6 +104,9 @@
     "新约能天使": [
         "char_1041_angel2"
     ],
+    "酒神": [
+        "char_1042_phatm2"
+    ],
     "芙兰卡": [
         "char_106_franka"
     ],
@@ -967,11 +970,17 @@
     "CONFESS-47": [
         "char_4188_confes"
     ],
+    "蒂比": [
+        "char_4191_tippi"
+    ],
     "蕾缪安": [
         "char_4193_lemuen"
     ],
     "信仰搅拌机": [
         "char_4194_rmixer"
+    ],
+    "Miss.Christine": [
+        "char_4198_christ"
     ],
     "焰尾": [
         "char_420_flamtl"
@@ -1363,6 +1372,12 @@
     ],
     "重构体": [
         "token_10050_monstr_prosts"
+    ],
+    "本能的召唤": [
+        "token_10054_phatm2_encdool"
+    ],
+    "迷狂牢笼": [
+        "token_10055_phatm2_mndclv"
     ],
     "投递坐标": [
         "token_10056_angel2_target"
@@ -2231,6 +2246,12 @@
     ],
     "圣堂保育员扮演者": [
         "trap_237_hlnpcb"
+    ],
+    "摄影机": [
+        "trap_247_crfilm"
+    ],
+    "打光道具": [
+        "trap_248_crprop"
     ],
     "寻根圣事": [
         "trap_250_hlctrl"
