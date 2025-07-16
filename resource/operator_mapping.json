@@ -982,6 +982,9 @@
     "信仰搅拌机": [
         "char_4194_rmixer"
     ],
+    "电弧": [
+        "char_4195_radian"
+    ],
     "录武官": [
         "char_4196_reckpr"
     ],
@@ -1378,6 +1381,15 @@
     ],
     "重构体": [
         "token_10050_monstr_prosts"
+    ],
+    "戴乌": [
+        "token_10051_radian_tower1"
+    ],
+    "赛柯": [
+        "token_10052_radian_tower2"
+    ],
+    "桑特拉": [
+        "token_10053_radian_tower3"
     ],
     "本能的召唤": [
         "token_10054_phatm2_encdool"
@@ -2214,6 +2226,21 @@
     "空壳": [
         "trap_221_ftshad"
     ],
+    "雕伥": [
+        "trap_222_rgdysm"
+    ],
+    "宝葫芦": [
+        "trap_223_dynbox"
+    ],
+    "铁葫芦": [
+        "trap_224_dyrbox"
+    ],
+    "怪葫芦": [
+        "trap_225_dysbox"
+    ],
+    "瑕": [
+        "trap_226_dychss"
+    ],
     "弱化节点": [
         "trap_227_mpweak"
     ],
@@ -2253,6 +2280,18 @@
     "圣堂保育员扮演者": [
         "trap_237_hlnpcb"
     ],
+    "明烛台": [
+        "trap_238_dydfst"
+    ],
+    "狭路相逢": [
+        "trap_239_dyffgd",
+        "trap_240_dyffdd",
+        "trap_766_duelwal",
+        "trap_767_duelcdt"
+    ],
+    "聚宝斋": [
+        "trap_241_dyldlz"
+    ],
     "摄影机": [
         "trap_247_crfilm"
     ],
@@ -2261,6 +2300,9 @@
     ],
     "寻根圣事": [
         "trap_250_hlctrl"
+    ],
+    "遗物中枢": [
+        "trap_251_buftrp"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
@@ -2717,10 +2759,6 @@
     ],
     "无可置疑的罪证": [
         "trap_765_bmoney"
-    ],
-    "狭路相逢": [
-        "trap_766_duelwal",
-        "trap_767_duelcdt"
     ],
     "保全人才合作协议": [
         "trap_768_godch"
