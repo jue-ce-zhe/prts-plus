@@ -110,6 +110,9 @@
     "司霆惊蛰": [
         "char_1043_leizi2"
     ],
+    "斩业星熊": [
+        "char_1044_hsgma2"
+    ],
     "芙兰卡": [
         "char_106_franka"
     ],
@@ -990,6 +993,15 @@
     ],
     "Miss.Christine": [
         "char_4198_christ"
+    ],
+    "松桐": [
+        "char_4199_makiri"
+    ],
+    "遥": [
+        "char_4202_haruka"
+    ],
+    "吉星": [
+        "char_4203_kichi"
     ],
     "焰尾": [
         "char_420_flamtl"
@@ -2303,6 +2315,21 @@
     ],
     "遗物中枢": [
         "trap_251_buftrp"
+    ],
+    "天命来袭": [
+        "trap_252_pckstp"
+    ],
+    "压力舒缓帮手": [
+        "trap_253_boxnma"
+    ],
+    "压力归零帮手": [
+        "trap_254_boxmac"
+    ],
+    "“斩”": [
+        "trap_255_pckzhn"
+    ],
+    "斩": [
+        "trap_255_pckzhn"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
