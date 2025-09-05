@@ -970,6 +970,21 @@
         "char_4179_monstr",
         "token_10002_kalts_mon3tr"
     ],
+    "丰川祥子": [
+        "char_4182_oblvns"
+    ],
+    "若叶睦": [
+        "char_4183_mortis"
+    ],
+    "三角初华": [
+        "char_4184_dolris"
+    ],
+    "祐天寺若麦": [
+        "char_4185_amoris"
+    ],
+    "八幡海铃": [
+        "char_4186_tmoris"
+    ],
     "聆音": [
         "char_4187_graceb"
     ],
@@ -2309,6 +2324,12 @@
     ],
     "打光道具": [
         "trap_248_crprop"
+    ],
+    "“月影之茧”": [
+        "trap_249_mjcsdw"
+    ],
+    "月影之茧": [
+        "trap_249_mjcsdw"
     ],
     "寻根圣事": [
         "trap_250_hlctrl"
