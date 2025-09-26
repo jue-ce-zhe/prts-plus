@@ -2075,11 +2075,134 @@
     "幽影门扉": [
         "trap_148_amblls"
     ],
+    "草丛": [
+        "trap_1500_lhgras"
+    ],
+    "花丛": [
+        "trap_1501_lhpark"
+    ],
+    "岩石": [
+        "trap_1502_lhrock"
+    ],
+    "山脉": [
+        "trap_1503_lhshan"
+    ],
+    "林地": [
+        "trap_1504_lhtree"
+    ],
+    "密林": [
+        "trap_1505_lhfrst"
+    ],
+    "河流": [
+        "trap_1506_lhhe"
+    ],
+    "富集矿区": [
+        "trap_1507_lhukmi"
+    ],
+    "源石矿场": [
+        "trap_1508_lhmine"
+    ],
+    "勘探器": [
+        "trap_1509_lhbot"
+    ],
+    "源石晶簇": [
+        "trap_1510_lhplt"
+    ],
+    "晶簇稳定器": [
+        "trap_1511_lhfac"
+    ],
+    "源石回收炉": [
+        "trap_1512_lhfarm"
+    ],
+    "冶铸车": [
+        "trap_1513_lhshop"
+    ],
+    "田地": [
+        "trap_1514_lhpad"
+    ],
+    "被污染的回收炉": [
+        "trap_1515_lhfacp"
+    ],
+    "供能基站": [
+        "trap_1516_lhnat"
+    ],
+    "藏书馆": [
+        "trap_1517_lhcol"
+    ],
+    "改良巫术祭坛": [
+        "trap_1518_lhdoor"
+    ],
+    "巫术村落": [
+        "trap_1519_lhrift"
+    ],
     "折叠式堡垒模块": [
         "trap_151_muruinw"
     ],
+    "大图书馆": [
+        "trap_1520_lhcolb"
+    ],
+    "术法岗哨": [
+        "trap_1521_lhmagd"
+    ],
+    "先遣侦测器": [
+        "trap_1522_lhvlg"
+    ],
+    "侦测中心": [
+        "trap_1523_lhtown"
+    ],
+    "装卸机": [
+        "trap_1524_lhport"
+    ],
+    "水产村落": [
+        "trap_1525_lhswer"
+    ],
+    "冲突围栏": [
+        "trap_1526_lharen"
+    ],
+    "警戒岗哨": [
+        "trap_1527_lhtwer"
+    ],
+    "废墟": [
+        "trap_1528_lhruin"
+    ],
+    "岗哨": [
+        "trap_1529_lhsht"
+    ],
     "折叠式辅助器械": [
         "trap_152_muruino"
+    ],
+    "荒野村落": [
+        "trap_1530_lhcamp"
+    ],
+    "猎户村落": [
+        "trap_1531_lhcampa"
+    ],
+    "山地村落": [
+        "trap_1532_lhcampb"
+    ],
+    "牧场村落": [
+        "trap_1533_lhcampc"
+    ],
+    "插件补给点": [
+        "trap_1534_lheqp"
+    ],
+    "插件强化点": [
+        "trap_1535_lhupgd"
+    ],
+    "噬血诅地": [
+        "trap_1536_lhbat"
+    ],
+    "信号基站": [
+        "trap_1537_lhside"
+    ],
+    "血裔胞体": [
+        "trap_1538_lhblod"
+    ],
+    "精怪实验室": [
+        "trap_1539_lhflwr"
+    ],
+    "温室拱棚": [
+        "trap_1540_lhpad2"
     ],
     "阵地屏障": [
         "trap_154_mugtps"
