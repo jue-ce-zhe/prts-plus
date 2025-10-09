@@ -1018,6 +1018,15 @@
     "吉星": [
         "char_4203_kichi"
     ],
+    "真言": [
+        "char_4204_mantra"
+    ],
+    "折桠": [
+        "char_4207_branch"
+    ],
+    "冬时": [
+        "char_4208_wintim"
+    ],
     "焰尾": [
         "char_420_flamtl"
     ],
@@ -2474,6 +2483,15 @@
     ],
     "斩": [
         "trap_255_pckzhn"
+    ],
+    "隐蔽矿道": [
+        "trap_270_spawnp"
+    ],
+    "严重污染设施": [
+        "trap_271_fowstn"
+    ],
+    "阻道岩壁": [
+        "trap_272_nomstn"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
