@@ -2445,6 +2445,7 @@
     "狭路相逢": [
         "trap_239_dyffgd",
         "trap_240_dyffdd",
+        "trap_278_dyfgdd",
         "trap_766_duelwal",
         "trap_767_duelcdt"
     ],
@@ -2483,6 +2484,9 @@
     ],
     "斩": [
         "trap_255_pckzhn"
+    ],
+    "古雕伥": [
+        "trap_258_rgcssm"
     ],
     "隐蔽矿道": [
         "trap_270_spawnp"
