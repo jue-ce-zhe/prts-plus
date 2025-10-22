@@ -2485,8 +2485,26 @@
     "斩": [
         "trap_255_pckzhn"
     ],
+    "迷幻反射镜": [
+        "trap_257_muulct"
+    ],
     "古雕伥": [
         "trap_258_rgcssm"
+    ],
+    "全手动推进器": [
+        "trap_259_murjet"
+    ],
+    "基础浮板": [
+        "trap_260_murbas"
+    ],
+    "引力浮板": [
+        "trap_261_murmag"
+    ],
+    "物资浮板": [
+        "trap_262_murtre"
+    ],
+    "防水物资箱": [
+        "trap_263_murbox"
     ],
     "隐蔽矿道": [
         "trap_270_spawnp"
