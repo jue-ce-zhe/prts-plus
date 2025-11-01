@@ -113,6 +113,15 @@
     "斩业星熊": [
         "char_1044_hsgma2"
     ],
+    "凛御银灰": [
+        "char_1045_svash2"
+    ],
+    "圣聆初雪": [
+        "char_1046_sbell2"
+    ],
+    "溯光星源": [
+        "char_1047_halo2"
+    ],
     "芙兰卡": [
         "char_106_franka"
     ],
@@ -646,6 +655,9 @@
     "迷迭香": [
         "char_391_rosmon"
     ],
+    "哈蒂娅": [
+        "char_394_hadiya"
+    ],
     "正义骑士号": [
         "char_4000_jnight"
     ],
@@ -738,6 +750,9 @@
     ],
     "多萝西": [
         "char_4048_doroth"
+    ],
+    "协律": [
+        "char_4051_akkord"
     ],
     "寻澜": [
         "char_4052_surfer"
@@ -1029,6 +1044,9 @@
     ],
     "焰尾": [
         "char_420_flamtl"
+    ],
+    "雪猎": [
+        "char_4211_snhunt"
     ],
     "羽毛笔": [
         "char_421_crow"
@@ -1435,6 +1453,14 @@
     ],
     "投递坐标": [
         "token_10056_angel2_target"
+    ],
+    "风雪之眼": [
+        "token_10057_svash2_eagle1",
+        "token_10057_svash2_eagle2",
+        "token_10057_svash2_eagle3"
+    ],
+    "保护目标（冻结状态）": [
+        "token_10058_sbell2_icetgt"
     ],
     "障碍物": [
         "trap_001_crate",
@@ -2505,6 +2531,21 @@
     ],
     "防水物资箱": [
         "trap_263_murbox"
+    ],
+    "伊斯贝塔高台": [
+        "trap_264_xdplat"
+    ],
+    "圣女像": [
+        "trap_265_xdice1"
+    ],
+    "雪崩触发装置": [
+        "trap_267_xdmac1"
+    ],
+    "积雪固定装置": [
+        "trap_268_xdmac2"
+    ],
+    "落雪防护装置": [
+        "trap_269_xdmac3"
     ],
     "隐蔽矿道": [
         "trap_270_spawnp"
