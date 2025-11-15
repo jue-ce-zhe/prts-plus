@@ -1261,6 +1261,12 @@
     "Misery": [
         "char_615_acspec"
     ],
+    "盟约·辅助干员": [
+        "char_616_pithst"
+    ],
+    "领主·Sharp": [
+        "char_617_sharp2"
+    ],
     "医疗探机": [
         "token_10000_silent_healrb"
     ],
@@ -1627,6 +1633,7 @@
     ],
     "封印的地面": [
         "trap_055_tileblock",
+        "trap_1107_acblock",
         "trap_180_dsblock"
     ],
     "丹田": [
@@ -1794,7 +1801,8 @@
         "trap_1004_acarm004"
     ],
     "信标": [
-        "trap_1005_acarm005"
+        "trap_1005_acarm005",
+        "trap_1109_acarm109"
     ],
     "源岩匕首": [
         "trap_1006_acarm006"
@@ -1803,7 +1811,8 @@
         "trap_1007_acarm007"
     ],
     "激光发射器": [
-        "trap_1008_acarm008"
+        "trap_1008_acarm008",
+        "trap_1053_acarm053"
     ],
     "喀兰贸易文档": [
         "trap_1009_acarm009"
@@ -1821,7 +1830,8 @@
         "trap_1012_acarm012"
     ],
     "蜂鸣器": [
-        "trap_1013_acarm013"
+        "trap_1013_acarm013",
+        "trap_1054_acarm054"
     ],
     "精打细算玩偶": [
         "trap_1014_acarm014"
@@ -1851,7 +1861,8 @@
         "trap_1021_acarm021"
     ],
     "口袋法阵": [
-        "trap_1022_acarm022"
+        "trap_1022_acarm022",
+        "trap_1048_acarm048"
     ],
     "竞技投币机": [
         "trap_1023_acarm023"
@@ -1860,7 +1871,8 @@
         "trap_1024_acarm024"
     ],
     "休眠子裔": [
-        "trap_1025_acarm025"
+        "trap_1025_acarm025",
+        "trap_1065_acarm065"
     ],
     "术师无人机": [
         "trap_1026_acarm026"
@@ -1888,7 +1900,8 @@
         "trap_1032_acarm032"
     ],
     "歌利亚头盔": [
-        "trap_1033_acarm033"
+        "trap_1033_acarm033",
+        "trap_1049_acarm049"
     ],
     "M3护甲": [
         "trap_1034_acarm034"
@@ -1900,22 +1913,123 @@
         "trap_1036_acarm036"
     ],
     "有限加速器": [
-        "trap_1037_acarm037"
+        "trap_1037_acarm037",
+        "trap_1052_acarm052"
     ],
     "全能机械臂": [
         "trap_1038_acarm038"
     ],
     "博士投影": [
-        "trap_1039_acarm039"
+        "trap_1039_acarm039",
+        "trap_1071_acarm071"
     ],
     "地形增伤控制": [
         "trap_103_ymdgct"
     ],
+    "炎国短刀": [
+        "trap_1040_acarm040"
+    ],
+    "维式重锤": [
+        "trap_1041_acarm041"
+    ],
+    "灼燃维式重锤": [
+        "trap_1042_acarm042"
+    ],
+    "坚定维式重锤": [
+        "trap_1043_acarm043"
+    ],
+    "加速维式重锤": [
+        "trap_1044_acarm044"
+    ],
+    "战栗维式重锤": [
+        "trap_1045_acarm045"
+    ],
+    "阿戈尔重刃": [
+        "trap_1046_acarm046"
+    ],
+    "坚守盾牌": [
+        "trap_1047_acarm047"
+    ],
     "改性植物激素": [
         "trap_104_dplant"
     ],
+    "萨尔贡浓茶": [
+        "trap_1050_acarm050"
+    ],
+    "迅捷作战粮": [
+        "trap_1051_acarm051"
+    ],
+    "伪装服": [
+        "trap_1055_acarm055"
+    ],
+    "不屈弹射器": [
+        "trap_1056_acarm056"
+    ],
+    "拉特兰桥夹": [
+        "trap_1057_acarm057"
+    ],
+    "催泪瓦斯": [
+        "trap_1058_acarm058"
+    ],
+    "浓缩嗅盐": [
+        "trap_1059_acarm059"
+    ],
+    "防暴盾": [
+        "trap_1060_acarm060"
+    ],
+    "护盾无人机": [
+        "trap_1061_acarm061"
+    ],
+    "谢拉格不融冰": [
+        "trap_1062_acarm062"
+    ],
+    "精准狙击镜": [
+        "trap_1063_acarm063"
+    ],
+    "突袭手雷": [
+        "trap_1064_acarm064"
+    ],
+    "幸运硬币": [
+        "trap_1066_acarm066"
+    ],
+    "双模机械臂": [
+        "trap_1067_acarm067"
+    ],
+    "M3茧甲": [
+        "trap_1068_acarm068"
+    ],
+    "拟态物质": [
+        "trap_1069_acarm069"
+    ],
     "积雪银凇 ": [
         "trap_106_smtree"
+    ],
+    "人事部文档": [
+        "trap_1070_acarm070"
+    ],
+    "突变细胞": [
+        "trap_1072_acarm072"
+    ],
+    "变形同构体": [
+        "trap_1073_acarm073"
+    ],
+    "商业包装方案": [
+        "trap_1074_acarm074"
+    ],
+    "寻呼模块": [
+        "trap_1075_acarm075"
+    ],
+    "铳骑之威": [
+        "trap_1076_acarm076"
+    ],
+    "天师古鼎": [
+        "trap_1077_acarm077"
+    ],
+    "海沟实验体": [
+        "trap_1078_acarm078"
+    ],
+    "蒸汽之心": [
+        "trap_1079_acarm079"
     ],
     "空间稳定设施": [
         "trap_107_smpow"
@@ -1983,8 +2097,41 @@
     "补给驳船": [
         "trap_1101_acplane"
     ],
+    "耶拉冈德之泪": [
+        "trap_1102_acarm102"
+    ],
+    "黄沙罗盘": [
+        "trap_1103_acarm103"
+    ],
+    "“双眼皮”": [
+        "trap_1104_aclasert"
+    ],
+    "双眼皮": [
+        "trap_1104_aclasert"
+    ],
+    "阻隔工事": [
+        "trap_1105_accrate"
+    ],
+    "射击台": [
+        "trap_1106_achplat"
+    ],
+    "“神秘顾客”": [
+        "trap_1108_acdisney"
+    ],
+    "神秘顾客": [
+        "trap_1108_acdisney"
+    ],
     "巨壳藤蔓": [
         "trap_110_smbbox"
+    ],
+    "画卷": [
+        "trap_1110_accopy"
+    ],
+    "教鞭": [
+        "trap_1111_acchal"
+    ],
+    "盟约寒风": [
+        "trap_1112_acblzd"
     ],
     "街头应急储备": [
         "trap_111_wdfarm"
