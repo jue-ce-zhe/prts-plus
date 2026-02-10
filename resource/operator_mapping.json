@@ -125,6 +125,9 @@
     "溯光星源": [
         "char_1047_halo2"
     ],
+    "赤刃明霄陈": [
+        "char_1050_chen3"
+    ],
     "芙兰卡": [
         "char_106_franka"
     ],
@@ -347,6 +350,9 @@
     ],
     "余": [
         "char_2026_yu"
+    ],
+    "望": [
+        "char_2027_wang"
     ],
     "塞雷娅": [
         "char_202_demkni"
@@ -1069,6 +1075,12 @@
     "羽毛笔": [
         "char_421_crow"
     ],
+    "矩": [
+        "char_4221_ju"
+    ],
+    "风絮": [
+        "char_4222_taraxa"
+    ],
     "极光": [
         "char_422_aurora"
     ],
@@ -1503,6 +1515,9 @@
     ],
     "应急承重小组": [
         "token_10061_nasti_nstbld"
+    ],
+    "棋子": [
+        "token_10064_wang_stone1"
     ],
     "障碍物": [
         "trap_001_crate",
@@ -2741,6 +2756,42 @@
     ],
     "喷泉水池": [
         "trap_279_pirene"
+    ],
+    "山脊": [
+        "trap_285_tjggt"
+    ],
+    "书刀": [
+        "trap_286_tjgsd"
+    ],
+    "断": [
+        "trap_287_baizi"
+    ],
+    "镇岁柱": [
+        "trap_288_sunmao"
+    ],
+    "财字": [
+        "trap_289_zicai"
+    ],
+    "食字": [
+        "trap_290_zishi"
+    ],
+    "兵字": [
+        "trap_291_zibin"
+    ],
+    "山字": [
+        "trap_292_zishan"
+    ],
+    "岁用山": [
+        "trap_293_suishan"
+    ],
+    "友字": [
+        "trap_294_ziyou"
+    ],
+    "印字": [
+        "trap_295_ziyin"
+    ],
+    "演出望": [
+        "trap_330_ycwang"
     ],
     "便携式种植槽": [
         "trap_400_xbfarm"
